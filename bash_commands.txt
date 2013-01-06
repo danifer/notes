@@ -1,0 +1,3 @@
+Reverse search through history:
+	<ctlr>-R : reverse search through history
+
