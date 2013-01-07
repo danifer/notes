@@ -1,3 +1,23 @@
 Reverse search through history:
-	<ctlr>-R : reverse search through history
+	<ctlr>-R
+
+Go back to the previous directory:
+    cd -
+
+Repeat your last command:
+    !!
+        sudo !!
+
+Rename with regex:
+    rename
+        rename 's/text_to_find/replace_with/' *.txt
+
+List only subdirectories from the current directory:
+    ls -d */
+
+Insert the arguments from your last bash command into your current bash command:
+    <alt>-.
+
+List the most recently modified files in a readable format (using the power of the gods)
+    ls -thor
 
