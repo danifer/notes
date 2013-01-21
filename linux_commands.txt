@@ -6,7 +6,7 @@ grep search and display 2 lines around the match
 
 
 Reverse search through history:
-	<ctlr>-R
+    <ctlr>-R
 
 Go back to the previous directory:
     cd -
@@ -28,3 +28,5 @@ Insert the arguments from your last bash command into your current bash command:
 List the most recently modified files in a readable format (using the power of the gods)
     ls -thor
 
+Set an ENVIRONMENT variable
+    export EDITOR=/usr/bin/nano #sets the default editor to nano
