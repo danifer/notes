@@ -1,2 +1,4 @@
 Multiple ssh private keys:
 	http://www.karan.org/blog/index.php/2009/08/25/multiple-ssh-private-keys
+Postfix spam configuration:
+	http://www.kuro5hin.org/story/2007/8/29/232031/383
