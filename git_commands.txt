@@ -1,3 +1,6 @@
+Undo git add before commit:
+    git reset FILE
+
 Get information on the last commit for the current branch:
     git log -1
 
