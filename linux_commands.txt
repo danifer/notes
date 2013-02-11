@@ -30,3 +30,9 @@ List the most recently modified files in a readable format (using the power of t
 
 Set an ENVIRONMENT variable
     export EDITOR=/usr/bin/nano #sets the default editor to nano
+
+Compressing mysqldump output with gzip
+    Compressing:
+        mysqldump <mysqldump options> | gzip > outputfile.sql.gz
+    Restoring:
+        gunzip < outputfile.sql.gz | mysql <mysql options>
