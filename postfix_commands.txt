@@ -1,0 +1,5 @@
+Display all postfix configuration options:
+	postconf -d
+
+Display postfix version info:
+	postconf -d | grep mail_version
