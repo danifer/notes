@@ -1,4 +1,4 @@
-grep search and display only filnames
+grep search and display only filenames
     grep -L
 
 grep search for full words, not substrings
@@ -39,3 +39,19 @@ Compressing mysqldump output with gzip
         mysqldump <mysqldump options> | gzip > outputfile.sql.gz
     Restoring:
         gunzip < outputfile.sql.gz | mysql <mysql options>
+
+List available disk devices
+    fdisk -l
+
+Mount all drives listed under /etc/fstab (if you make a change and don't want to reboot)
+    mount -a
+
+Suspend the current foreground job
+    ctrl-z
+        List suspended jobs
+            jobs
+        Move a job to the background
+            bg
+        Move a job to the foreground
+            fg
+
