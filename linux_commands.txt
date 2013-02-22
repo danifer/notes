@@ -55,3 +55,15 @@ Suspend the current foreground job
         Move a job to the foreground
             fg
 
+Schedule one-off jobs (use crontab for recurring jobs)
+    Schedule a new job
+        at now +X (hours|minutes|seconds)
+        at> rm ~/my_file.txt;
+        at> echo "file deleted" > ~/at.log;
+        at> <EOT> (ctrl-d when you are finished entering commands)
+
+    List scheduled jobs
+        atq
+
+    Remove a scheduled job
+        atrm X (where X is the job number)
