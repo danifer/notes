@@ -39,6 +39,8 @@ Compressing mysqldump output with gzip
         mysqldump <mysqldump options> | gzip > outputfile.sql.gz
     Restoring:
         gunzip < outputfile.sql.gz | mysql <mysql options>
+    Alternative one-liner:
+        mysqldump mydatabase -u root -p | gzip -c | cat > mydatabase-$(date +%Y-%m-%d-%H.%M.%S).sql.gz
 
 List available disk devices
     fdisk -l
