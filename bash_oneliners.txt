@@ -1,0 +1,2 @@
+#Bulk delete keys from a Redis store with intermittent pauses.
+redis-cli keys "*" | while read LINE; do NUM=$[$NUM+1]; if [ $NUM -ge 5000 ]; then echo sleeping; sleep 10; NUM=0; else redis-cli -n 3 del $LINE; fi; done;
