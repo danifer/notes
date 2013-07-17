@@ -1,3 +1,6 @@
+Pretty print JSON from the command line using Python
+    echo '{"foo": "lorem", "bar": "ipsum"}' | python -mjson.tool
+
 grep search and display only filenames
     grep -L
 
