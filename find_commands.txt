@@ -1,2 +1,5 @@
 #Delete files by matching name
 find . -wholename '*/www.website.com/*.html' -delete
+
+#Plain old find-by-name
+find . -name "*file*"
