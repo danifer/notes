@@ -1,3 +1,9 @@
+Send an email from the command line:
+    echo "My message" | mail -s subject user@gmail.com
+
+Tar a directory:
+    tar -zcvf filename.tar.gz /target/directory
+
 Pretty print JSON from the command line using Python
     echo '{"foo": "lorem", "bar": "ipsum"}' | python -mjson.tool
 
