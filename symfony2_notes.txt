@@ -1,4 +1,13 @@
--Installed composer locally (http://getcomposer.org/download/)
--Used composer to create a new symfony project: php composer.phar create-project symfony/framework-standard-edition path/ 2.4.0 (sets up directory structure)
--Create a bundle for your "thing"
--create app/logs and app/cache directories and set permissions to 777
+- Installed composer locally (http://getcomposer.org/download/)
+- Used composer to create a new symfony project: php composer.phar create-project symfony/framework-standard-edition path/ 2.4.0 (sets up directory structure)
+- Create a bundle for your "thing"
+    php app/console generate:bundle --namespace=Acme/StoreBundle
+- Create app/logs and app/cache directories and set permissions to 777
+- Configure the databse in app/config/parameters.yml and app/config/config.yml
+- Create the actual database: php app/console doctrine:database:create
+    Be sure to change the default collation and character set:
+      collation-server = utf8_general_ci
+      character-set-server = utf8
+- Make entities for Doctrine Objects: http://symfony.com/doc/current/book/doctrine.html
+- Create the database: php app/console doctrine:schema:update --force
+
