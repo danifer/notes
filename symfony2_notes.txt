@@ -3,7 +3,7 @@
 - Create a bundle for your "thing"
     php app/console generate:bundle --namespace=Acme/StoreBundle
 - Create app/logs and app/cache directories and set permissions to 777
-- Configure the databse in app/config/parameters.yml and app/config/config.yml
+- Configure the database in app/config/parameters.yml and app/config/config.yml
 - Create the actual database: php app/console doctrine:database:create
     Be sure to change the default collation and character set:
       collation-server = utf8_general_ci
@@ -11,3 +11,8 @@
 - Make entities for Doctrine Objects: http://symfony.com/doc/current/book/doctrine.html
 - Create the database: php app/console doctrine:schema:update --force
 
+
+Commands:
+
+Rebuild database from schema:
+  php app/console doctrine:schema:update --force
