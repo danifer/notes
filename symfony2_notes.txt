@@ -16,3 +16,6 @@ Commands:
 
 Rebuild database from schema:
   php app/console doctrine:schema:update --force
+
+Get Symfony version:
+  php app/console --version
