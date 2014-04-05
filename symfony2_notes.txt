@@ -19,3 +19,7 @@ Rebuild database from schema:
 
 Get Symfony version:
   php app/console --version
+
+Clear cache:
+  php app/console cache:clear
+  php app/console cache:clear --env=prod --no-debug

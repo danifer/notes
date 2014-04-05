@@ -16,3 +16,5 @@ Get the remote branches:
 Get the local branches:
     git branch
 
+Stage all changes to tracked files (including deletes)
+    git add -u
