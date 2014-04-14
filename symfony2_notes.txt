@@ -3,6 +3,9 @@
 - Create a bundle for your "thing"
     php app/console generate:bundle --namespace=Acme/StoreBundle
 - Create app/logs and app/cache directories and set permissions to 777
+  - Setup file Permissions ACLs for Debian (so www-data can edit/delete files):
+    - https://help.ubuntu.com/community/FilePermissionsACLs
+    - http://symfony.com/doc/current/book/installation.html#configuration-and-setup
 - Configure the database in app/config/parameters.yml and app/config/config.yml
 - Create the actual database: php app/console doctrine:database:create
     Be sure to change the default collation and character set:
