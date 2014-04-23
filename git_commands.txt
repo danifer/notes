@@ -18,3 +18,6 @@ Get the local branches:
 
 Stage all changes to tracked files (including deletes)
     git add -u
+
+Remove a file from version control (while keeping it in your local repository). Don't forget to update .gitignore.
+    git rm --cached <file>
