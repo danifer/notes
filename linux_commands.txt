@@ -77,4 +77,4 @@ Schedule one-off jobs (use crontab for recurring jobs)
         atrm X (where X is the job number)
 
 Convert UNIX epoch time to readable format
-    date -r 123439819723 '+%m/%d/%Y:%H:%M:%S'
+    date -d @1402423448
