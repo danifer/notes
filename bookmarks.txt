@@ -9,3 +9,6 @@ Sublime text workflow:
 
 Sublime text package control:
     http://wbond.net/sublime_packages/package_control
+
+Git – setting up a remote repository and doing an initial push
+    http://thelucid.com/2008/12/02/git-setting-up-a-remote-repository-and-doing-an-initial-push/
