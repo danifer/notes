@@ -1,5 +1,8 @@
 #Delete files by matching name
-find . -wholename '*/www.website.com/*.html' -delete
+    find . -wholename '*/www.website.com/*.html' -delete
 
 #Plain old find-by-name
-find . -name "*file*"
+    find . -name "*file*"
+
+Find and delete files older than X days
+    find /directory/location -name '*' -type f -daystart -mtime +1 -exec rm -f {} \;

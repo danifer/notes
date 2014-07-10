@@ -75,3 +75,6 @@ Schedule one-off jobs (use crontab for recurring jobs)
 
     Remove a scheduled job
         atrm X (where X is the job number)
+
+Convert UNIX epoch time to readable format
+    date -d @1402423448
