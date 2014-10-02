@@ -78,3 +78,6 @@ Schedule one-off jobs (use crontab for recurring jobs)
 
 Convert UNIX epoch time to readable format
     date -d @1402423448
+
+Find large directories
+     du -hsx * | sort -rh | head -10 #human readable, current directory
