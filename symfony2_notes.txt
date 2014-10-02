@@ -26,3 +26,9 @@ Get Symfony version:
 Clear cache:
   php app/console cache:clear
   php app/console cache:clear --env=prod --no-debug
+
+Load fixtures:
+  php app/console doctrine:fixtures:load
+
+Publish js/css resources managed by assetic (don't forget to clear the cache)
+  php app/console assetic:dump
