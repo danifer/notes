@@ -24,3 +24,11 @@ Stage all changes to tracked files (including deletes)
 
 Remove a file from version control (while keeping it in your local repository). Don't forget to update .gitignore.
     git rm --cached <file>
+
+Push a local branch to a remote origin:
+    git push <REMOTENAME> <BRANCHNAME> 
+        example: git push origin my_branch
+
+Delete a remote branch:
+    git push --delete <REMOTENAME> <BRANCHNAME>
+        git push --delete origin branch_to_delete

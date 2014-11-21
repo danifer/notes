@@ -32,3 +32,6 @@ Load fixtures:
 
 Publish js/css resources managed by assetic (don't forget to clear the cache)
   php app/console assetic:dump
+
+Generate a new doctrine entity:
+  php app/console generate:doctrine:entity
