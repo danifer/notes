@@ -36,3 +36,12 @@ Delete a remote branch:
 Rollback to a previous commit (use --hard to reset BOTH the files and commit history)
     git reset --hard <tag/branch/commit_id>
         git reset --hard 326caed3996a5c37cc72b0dd18ebe8366d985902
+
+Git merge current branch with another branch and specify a merge strategy
+    git merge -s <ours|theirs|something else> <branch>
+        git merge -s ours master
+
+Undo a merge before commit. Syntax depends on git version: http://stackoverflow.com/questions/5741407/how-to-undo-a-git-merge-with-conflicts
+    git reset --merge
+    git merge --abort
+    git reset --hard
