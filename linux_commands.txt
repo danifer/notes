@@ -81,3 +81,6 @@ Convert UNIX epoch time to readable format
 
 Find large directories
      du -hsx * | sort -rh | head -10 #human readable, current directory
+
+Echo md5 sums via the command line
+    echo -n sampletext | md5sum
