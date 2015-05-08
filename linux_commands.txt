@@ -84,3 +84,9 @@ Find large directories
 
 Echo md5 sums via the command line
     echo -n sampletext | md5sum
+
+Use NMAP to scan an IP range
+    Scan everything from 0-255
+        nmap -sP 192.168.1.0/24
+    Scan a specific range like 1-200
+        nmap -sP 192.168.1.1-200
