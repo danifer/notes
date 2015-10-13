@@ -19,6 +19,9 @@ Get the remote branches:
 Get the local branches:
     git branch
 
+Delete a local branch:
+    git branch -d <branchname>
+
 Stage all changes to tracked files (including deletes)
     git add -u
 
