@@ -1,7 +1,7 @@
-#Delete files by matching name
+Delete files by matching name
     find . -wholename '*/www.website.com/*.html' -delete
 
-#Plain old find-by-name
+Plain old find-by-name
     find . -name "*file*"
 
 Find and delete files older than X days
@@ -9,3 +9,6 @@ Find and delete files older than X days
 
 Find and replace across multiple files
     find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'
+
+Find files by permission
+    find . -type f -perm 0777
