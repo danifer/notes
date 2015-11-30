@@ -6,3 +6,6 @@
 
 Find and delete files older than X days
     find /directory/location -name '*' -type f -daystart -mtime +1 -exec rm -f {} \;
+
+Find and replace across multiple files
+    find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'
