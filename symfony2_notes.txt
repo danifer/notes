@@ -35,3 +35,6 @@ Publish js/css resources managed by assetic (don't forget to clear the cache)
 
 Generate a new doctrine entity:
   php app/console generate:doctrine:entity
+
+FOSUserBundle console command to change a user password
+  php app/console fos:user:change-password testuser newp@ssword
