@@ -12,3 +12,9 @@ Find and replace across multiple files
 
 Find files by permission
     find . -type f -perm 0777
+
+Find, tar, gzip with name based on original filename, then delete files. Useful for compressing log files.
+    find . -name "*.csv" -type f -exec tar -czf {}.tar.gz {} --remove-files \;
+
+Find and delete files older than 10 days in the /tmp directory
+    find /tmp -ctime +10 -exec rm -rf {} +
