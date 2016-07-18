@@ -5,3 +5,10 @@
 - Export a repository to remove it from version control
     svn export [source] [destination]
         - note: will not export untracked files, so you need to move things that aren't under version control manually (stored data files, .pdfs, etc.).
+
+- Recursively find all ignored files
+    svn propget -R svn:ignore
+    svn status --no-ignore | grep "I  "
+        - http://stackoverflow.com/questions/2579483/get-recursive-list-of-svnignored-files
+
+
