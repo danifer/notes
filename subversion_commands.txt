@@ -1,3 +1,7 @@
 - Change location of the repository using the "switch" command, not "relocate" which is unavailable in earlier versions of Subversion
     svn switch --relocate FROM TO
         svn switch --relocate https://secure.danifer.com/svn/rightinvoice.com/trunk svn+altssh://dfw2.danifer.com/home/svn/rightinvoice.com/trunk
+
+- Export a repository to remove it from version control
+    svn export [source] [destination]
+        - note: will not export untracked files, so you need to move things that aren't under version control manually (stored data files, .pdfs, etc.).
