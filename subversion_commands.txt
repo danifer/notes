@@ -11,4 +11,5 @@
     svn status --no-ignore | grep "I  "
         - http://stackoverflow.com/questions/2579483/get-recursive-list-of-svnignored-files
 
-
+- Remove version control from a project without the "svn export" command
+    find . -type d -name .svn -exec rm -rf {} \;
