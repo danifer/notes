@@ -53,3 +53,6 @@ Undo a merge before commit. Syntax depends on git version: http://stackoverflow.
 Initialize a new repository
    git init (from the current repository)
    git init --bare (to initialize a blank storage repository)
+
+Update remote tracking branches
+   git fetch
