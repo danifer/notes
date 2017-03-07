@@ -96,3 +96,6 @@ Base64 encode a string
 
 Decode base64 encoded string
     echo -n c2NvdHRsaW51eC5jb20gcm9ja3MK | base64 -d
+
+Use watch command on a compound or chained command
+    watch 'ps aux | grep php'
