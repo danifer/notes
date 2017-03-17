@@ -48,6 +48,12 @@ Compressing mysqldump output with gzip
     Alternative one-liner:
         mysqldump mydatabase -u root -p | gzip -c | cat > mydatabase-$(date +%Y-%m-%d-%H.%M.%S).sql.gz
 
+Show mysql database info
+    Show tables
+        SHOW TABLES;
+    Show columns on a table
+        SHOW COLUMNS from TABLE;
+
 List available disk devices
     fdisk -l
 
