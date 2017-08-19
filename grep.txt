@@ -12,3 +12,13 @@ grep files and use awk to add a newline after each result:
 
 grep files for multiple words (grep supports regular expression match):
    grep 'warning\|error\|critical' .
+
+grep for a limited number of results
+   grep -m X "search string"
+       grep -m 5 "error"
+
+grep backwards through a file
+    tac file.log | grep "string"
+
+grep plus tail to follow a file and look for words
+    tail -f file.log | grep "string"
