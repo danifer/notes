@@ -38,3 +38,6 @@ Generate a new doctrine entity:
 
 FOSUserBundle console command to change a user password
   php bin/console fos:user:change-password testuser newp@ssword
+
+Triger doctrine migrations
+  php bin/console doctrine:migrations:migrate
