@@ -5,6 +5,9 @@ Add user to group:
     usermod -a -G groupname username
         usermod -a -G sudo keeton
 
+Remove a user's password:
+    passwd --delete username
+
 Send an email from the command line:
     echo "My message" | mail -s subject user@gmail.com
 
