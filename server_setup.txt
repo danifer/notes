@@ -60,9 +60,10 @@ edit /etc/hosts to respect local network
 update hostname
   echo server1.example.com > /etc/hostname
   /etc/init.d/hostname.sh start
+  #may need to restart the system depending on OS version
   hostname
   hostname -f
-  
+
 upgrade OS
   aptitude update
   aptitude full-upgrade
@@ -102,7 +103,7 @@ install rsync
 
 consider mod-evasive (rate limiter for apache)
 
-consider subversion if needed.
+consider subversion or git if needed.
 
 enable some apache modules if needed
   a2enmod ssl
