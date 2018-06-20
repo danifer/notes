@@ -115,3 +115,6 @@ Tunnel local MySql server through SSH. This lets you connect your local dev envi
 
 Difference between usr, bin, sbin, etc.
     https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+
+Fix apt-get update "the following signatures couldn’t be verified because the public key is not available"
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
