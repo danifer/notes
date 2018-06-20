@@ -40,6 +40,9 @@ Rollback to a previous commit (use --hard to reset BOTH the files and commit his
     git reset --hard <tag/branch/commit_id>
         git reset --hard 326caed3996a5c37cc72b0dd18ebe8366d985902
 
+If you've rolled back and want to make the repository match the current state of your rollback, do a force push update
+    git push origin master -f
+
 Git merge current branch with another branch and specify a merge strategy
     git merge -s <ours|something else> <branch>
         git merge -s ours master
