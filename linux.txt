@@ -14,6 +14,12 @@ Send an email from the command line:
 Tar a directory:
     tar -zcvf filename.tar.gz /target/directory
 
+Extract a .tar file
+    tar -xvf file.tar
+
+Extract a .tar.gz file
+    tar -xvzf file.tar.gz
+
 Pretty print JSON from the command line using Python
     echo '{"foo": "lorem", "bar": "ipsum"}' | python -mjson.tool
 
@@ -118,3 +124,9 @@ Difference between usr, bin, sbin, etc.
 
 Fix apt-get update "the following signatures couldn’t be verified because the public key is not available"
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+
+Install from a .deb file
+    https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt
+        Install: dpkg -i /path/to/deb/file
+        followed by: apt-get install -f
+            This is to resolve unmet dependencies
