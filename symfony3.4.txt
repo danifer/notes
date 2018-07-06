@@ -1,0 +1,41 @@
+Make a new project
+  symfony new my_project_name 3.4
+
+Exclude version control:
+  parameters.yml
+  vendor/*
+  cache/*
+  logs/*
+
+Configure your application in app/config/parameters.yml file.
+
+Read the documentation at https://symfony.com/doc
+
+Drop a database
+  php bin/console doctrine:database:drop --force
+
+Create a database
+  php bin/console doctrine:database:create
+
+Generate an entity interactively
+  php bin/console doctrine:generate:entity
+
+Validate data mapping
+  php bin/console doctrine:schema:validate
+
+Update the database schema
+  php bin/console help doctrine:schema:update
+    --force
+    --dump-sql
+
+List all routes
+  php bin/console debug:router
+
+List all available console commands
+  php bin/console
+
+Check if the user is authenticated before accessing the $this->getUser() method
+  $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+created/updated timestamps on Doctrine entities:
+  https://maltronic.io/2015/08/22/automating-created-updated-deleted-timestamps-with-doctrine/
