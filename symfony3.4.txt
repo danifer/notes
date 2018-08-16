@@ -34,8 +34,23 @@ List all routes
 List all available console commands
   php bin/console
 
+Follow the log files in real time
+    php bin/console server:log -vv
+
+Working with parameters in the container
+    $container->hasParameter('mailer.transport');
+    $container->getParameter('mailer.transport');
+    $container->setParameter('mailer.transport', 'sendmail');
+
 Check if the user is authenticated before accessing the $this->getUser() method
-  $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+  https://symfony.com/doc/3.4/security.html
+    $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+    $this->container->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')
+    $this->container->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_REMEMBERED') || $this->container->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')
 
 created/updated timestamps on Doctrine entities:
   https://maltronic.io/2015/08/22/automating-created-updated-deleted-timestamps-with-doctrine/
+
+FOSUserBundle Configuration:
+  https://symfony.com/doc/master/bundles/FOSUserBundle/configuration_reference.html
+

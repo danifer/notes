@@ -1,8 +1,16 @@
 Undo git add before commit:
     git reset FILE
 
+Undo your last commit, so you can redo it.
+    git reset --soft HEAD~1
+        Note the --soft flag: this makes sure that the changes in undone revisions are preserved.
+        If you don't want to keep these changes, use the --hard flag.
+
 Get information on the last commit for the current branch:
     git log -1
+
+Get just the filenames from a diff
+    git diff --name-only
 
 Make a new branch
     git branch my_branch_name
@@ -53,6 +61,9 @@ Undo a merge before commit. Syntax depends on git version: http://stackoverflow.
     git merge --abort
     git reset --hard
 
+Review merge results without committing or fast-forwarding. Basically a dry-run option
+    git merge --no-commit --no-ff $BRANCH
+    
 Initialize a new repository
    git init (from the current repository)
    git init --bare (to initialize a blank storage repository)
