@@ -40,6 +40,9 @@ Rename with regex:
 List only subdirectories from the current directory:
     ls -d */
 
+List files, but don't organize them. Much faster.
+    ls -U
+
 Insert the arguments from your last bash command into your current bash command:
     <alt>-.
 
