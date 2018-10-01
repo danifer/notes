@@ -9,6 +9,9 @@ Undo your last commit, so you can redo it.
 Get information on the last commit for the current branch:
     git log -1
 
+Get the log differences between two branches
+    git log [branch]..[branch]
+
 Get just the filenames from a diff
     git diff --name-only
 
@@ -70,3 +73,8 @@ Initialize a new repository
 
 Update remote tracking branches
    git fetch
+
+Show the differences for a specific commit
+    git show [commit id]
+
+
