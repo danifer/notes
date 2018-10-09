@@ -1,0 +1,24 @@
+Update apt sources
+  apt-get update
+
+Install sudo
+  apt-get install sudo
+
+Add a user account
+  adduser
+
+Add user to sudoers
+  visudo
+
+Disable root SSH login & move SSH login port to custom value
+
+Install fail2ban
+
+Install postfix via mailutils
+  Internet Site
+
+Add allowed relay IPs to mynetworks
+  /etc/postfix/main.cf
+
+Update reverse DNS with provider, and in Postfix
+  /etc/postfix/main.cf
