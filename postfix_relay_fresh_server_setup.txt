@@ -26,5 +26,9 @@ Add allowed relay IPs to mynetworks
 Update reverse DNS with provider, and in Postfix
   /etc/postfix/main.cf
 
+Need to make sure you've defined IPv4, not v6
+  /etc/postfix/main.cf
+    inet_protocols = ipv4
+
 Use MxToolbox to check status
   https://mxtoolbox.com/SuperTool.aspx
