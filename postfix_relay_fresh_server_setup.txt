@@ -22,3 +22,6 @@ Add allowed relay IPs to mynetworks
 
 Update reverse DNS with provider, and in Postfix
   /etc/postfix/main.cf
+
+Use MxToolbox to check status
+  https://mxtoolbox.com/SuperTool.aspx
