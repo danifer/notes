@@ -1,3 +1,6 @@
+Check blacklists after server setup
+  https://mxtoolbox.com/blacklists.aspx
+
 Update apt sources
   apt-get update
 
