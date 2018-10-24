@@ -30,5 +30,18 @@ Need to make sure you've defined IPv4, not v6
   /etc/postfix/main.cf
     inet_protocols = ipv4
 
+Update SPF records in the domain's DNS and add the relay server's IP address
+  TXT example.com "v=spf1 ip4:203.0.113.2 ~all"
+
+Optional: tell the relay server to strip offending header tags
+  https://major.io/2013/04/14/remove-sensitive-information-from-email-headers-with-postfix/
+    Edit /etc/postfix/header_checks with appropriate regex
+      /^Received:.*72.249.130/        IGNORE
+    Add to main.cf    
+      header_checks = regexp:/etc/postfix/header_checks
+    postmap /etc/postfix/header_checks
+    postfix reload
+
+
 Use MxToolbox to check status
   https://mxtoolbox.com/SuperTool.aspx
