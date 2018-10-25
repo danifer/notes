@@ -137,3 +137,7 @@ Install from a .deb file
 Find the absolute file location of a running process
     ls -l /proc/[PID]/exe
       You can find the PID of a running process with 'ps aux | grep [process]'
+
+Remove the password from a ssh key:
+  ssh-keygen -p
+    You will be prompted for the key's current password
