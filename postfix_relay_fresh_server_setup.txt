@@ -1,5 +1,6 @@
 Check blacklists after server setup
   https://mxtoolbox.com/blacklists.aspx
+  https://ipcheck.proofpoint.com/?ip=104.200.17.238
 
 Update apt sources
   apt-get update
@@ -41,8 +42,3 @@ Optional: tell the relay server to strip offending header tags
       header_checks = regexp:/etc/postfix/header_checks
     postmap /etc/postfix/header_checks
     postfix reload
-
-
-Use MxToolbox to check status
-  https://mxtoolbox.com/SuperTool.aspx
-  https://ipcheck.proofpoint.com/?ip=104.200.17.238
