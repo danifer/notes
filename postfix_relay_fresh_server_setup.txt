@@ -45,3 +45,4 @@ Optional: tell the relay server to strip offending header tags
 
 Use MxToolbox to check status
   https://mxtoolbox.com/SuperTool.aspx
+  https://ipcheck.proofpoint.com/?ip=104.200.17.238
