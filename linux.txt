@@ -141,3 +141,10 @@ Find the absolute file location of a running process
 Remove the password from a ssh key:
   ssh-keygen -p
     You will be prompted for the key's current password
+
+Allocate addition swap space. Good for Composer's high memory requirement when you're on a virtual machine.
+  Be careful with the 'dd' command!
+  From: https://coderwall.com/p/grhteq/when-composer-cannot-allocate-memory
+    sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+    sudo /sbin/mkswap /var/swap.1
+    sudo /sbin/swapon /var/swap.1
