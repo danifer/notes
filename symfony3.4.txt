@@ -54,3 +54,8 @@ created/updated timestamps on Doctrine entities:
 FOSUserBundle Configuration:
   https://symfony.com/doc/master/bundles/FOSUserBundle/configuration_reference.html
 
+Fixing the file permission issue on var/log; var/cache; var/session directories:
+  https://symfony.com/doc/3.4/setup/file_permissions.html
+     HTTPDUSER=$(ps axo user,comm | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1)
+     sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX var
+     sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX var
