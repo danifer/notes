@@ -148,3 +148,6 @@ Allocate addition swap space. Good for Composer's high memory requirement when y
     sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
     sudo /sbin/mkswap /var/swap.1
     sudo /sbin/swapon /var/swap.1
+
+Get the current debian version:
+  lsb_release -a
