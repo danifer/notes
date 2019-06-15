@@ -9,6 +9,9 @@ Undo your last commit, so you can redo it.
 Get information on the last commit for the current branch:
     git log -1
 
+Get the date of the first commit
+    git log --reverse
+
 Get the log differences between two branches
     git log [branch]..[branch]
 
