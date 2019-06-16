@@ -29,6 +29,10 @@ Reverse search through history:
 Go back to the previous directory:
     cd -
 
+Copy files including hidden files like .gitignore
+    cp *.* DOES NOT WORK. Use rsync instead
+        rsync -av . /path/to/target
+
 Repeat your last command:
     !!
         sudo !!

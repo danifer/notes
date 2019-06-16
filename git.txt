@@ -30,6 +30,10 @@ Get the remote url:
 Get the remote branches:
     git branch -r
 
+Re-target/change the remote repository
+    git remote set-url [branch] [new remote repository]
+        git remote set-url master [repository location]
+
 Get the local branches:
     git branch
 
@@ -41,6 +45,9 @@ Stage all changes to tracked files (including deletes)
 
 Remove a file from version control (while keeping it in your local repository). Don't forget to update .gitignore.
     git rm --cached <file>
+
+Remove a project from version control
+    Delete the .git directory.
 
 Push a local branch to a remote origin:
     git push <REMOTENAME> <BRANCHNAME> 
