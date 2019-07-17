@@ -1,3 +1,9 @@
 Replication - used the following articles:
     https://www.linode.com/docs/databases/mysql/configure-master-master-mysql-database-replication/
     https://www.digitalocean.com/community/tutorials/how-to-set-up-mysql-master-master-replication
+
+Add a user:
+    GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password';
+
+Change root password:
+    https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/
