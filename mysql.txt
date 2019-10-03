@@ -6,9 +6,13 @@ Add a user:
     GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password';
 
 Change root password:
+    Try this first (especially for new installations)
+        As root: mysqladmin -u root password newpassword
     https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/
     https://www.digitalocean.com/community/tutorials/how-to-reset-your-mysql-or-mariadb-root-password-on-ubuntu-18-04
         UPDATE mysql.user SET password = PASSWORD('new_password') WHERE user = 'root';
         UPDATE mysql.user SET authentication_string = '' WHERE user = 'root';
         UPDATE mysql.user SET plugin = '' WHERE user = 'root';
         FLUSH PRIVILEGES;
+
+
