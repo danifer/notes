@@ -109,12 +109,22 @@ Date commands
         date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'
 
     Adjust the system time to a different timezone (temporarily set the timezone variable for a command)
+    i.e. What's the current time in a different timezone?
         TZ=America/New_York date;
         TZ=America/Chicago date;
         TZ=America/Los_Angeles date;
 
     For arithmetic
         date -d "+5 hours"
+
+    It's 6pm in Taipei, what time is it here?
+        date --date='TZ="Asia/Taipei" 18:00'
+
+    At 11am here in Texas, what time is it in Taipei?
+        TZ=Asia/Taipei date -d "11:00 CST"
+
+    What time will 04:00 UTC be in CST?
+        TZ=America/Chicago date -d "04:00 UTC"
 
 Find large directories
      du -hsx * | sort -rh | head -10 #human readable, current directory
