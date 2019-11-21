@@ -98,8 +98,23 @@ Schedule one-off jobs (use crontab for recurring jobs)
     Remove a scheduled job
         atrm X (where X is the job number)
 
-Convert UNIX epoch time/timestamp to readable format
-    date -d @1402423448
+Date commands
+    Convert UNIX epoch time/timestamp to readable format
+        date -d @1402423448
+
+    Show timezone
+        date +%Z
+
+    Change output format
+        date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'
+
+    Adjust the system time to a different timezone (temporarily set the timezone variable for a command)
+        TZ=America/New_York date;
+        TZ=America/Chicago date;
+        TZ=America/Los_Angeles date;
+
+    For arithmetic
+        date -d "+5 hours"
 
 Find large directories
      du -hsx * | sort -rh | head -10 #human readable, current directory
