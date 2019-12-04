@@ -1,16 +1,46 @@
-grep search and display only filenames
+Highlight your matches
+    grep --color
+
+Exclude directories
+    grep --exclude-dir="dir1" --exclude-dir="dir2"
+
+Include specific files
+    grep --include="*.txt"
+
+Search and display only filenames
     grep -l
 
-grep search for full words, not substrings
+Don't display the filename
+    grep --no-filename
+
+Search for full words, not substrings
     grep -w
+
+grep for a string and return the full text from all matching files (concatentated with \n)
+    grep -R 'string' . | xargs -d '\n'
+
+grep for a string and then invert the selection
+    grep -v
+
+grep, then sort for unique lines
+    grep string . | sort --unique
+
+Suppress 'No such file or directory' errors
+    grep -s
+
+grep and return positions around your match
+    grep -Po 'string.{0,1000}'
 
 grep search and display 2 lines around the match
     grep -C 2 "search" file.txt
 
-grep files and use awk to add a newline after each result:
+grep files and use awk to add a newline after each result
     grep -R "something" . | awk '{print $0,"\n"}'
 
-grep files for multiple words (grep supports regular expression match):
+grep and use awk to return a portion of the line after a delimiter
+    grep -R "something" . | awk -F"[delimiter]+" '{print $2}'
+
+grep files for multiple words (grep supports regular expression match)
    grep 'warning\|error\|critical' .
 
 grep for a limited number of results
@@ -22,6 +52,3 @@ grep backwards through a file
 
 grep plus tail to follow a file and look for words
     tail -f file.log | grep "string"
-
-suppress 'No such file or directory' errors
-    grep -s
