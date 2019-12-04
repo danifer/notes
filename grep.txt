@@ -22,3 +22,6 @@ grep backwards through a file
 
 grep plus tail to follow a file and look for words
     tail -f file.log | grep "string"
+
+suppress 'No such file or directory' errors
+    grep -s
