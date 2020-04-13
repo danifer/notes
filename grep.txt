@@ -1,6 +1,12 @@
 Highlight your matches
     grep --color
 
+Highlight and maintain color with less and more
+    grep --color=always [search] [file] | less -R
+
+Highlight and output the entire file
+   grep --color "^\|search" [explicit file name]
+
 Exclude directories
     grep --exclude-dir="dir1" --exclude-dir="dir2"
 
@@ -52,3 +58,6 @@ grep backwards through a file
 
 grep plus tail to follow a file and look for words
     tail -f file.log | grep "string"
+
+Find unique email addresses
+    grep -ERho "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" . | sort | uniq
