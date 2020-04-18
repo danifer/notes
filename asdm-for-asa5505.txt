@@ -24,3 +24,6 @@ Some gotchas:
   -The ASDM client will use the proxy settings configured for Internet Explorer.  Click the Java icon on the ASDM launcher page to view the Java console and look for connection errors.
 
   -If you're looking for files, check your desktop "Danifer" entitled "asdm asa5505 resources". I saved a copy of Java 1.6 Runtime Environment, the ASDM launcher setup program, and some screenshots for the proxy/tunnel setup.
+
+Configuring multiple external IP ranges
+  https://community.spiceworks.com/topic/1602602-how-to-add-a-second-subnet-to-cisco-asa-firewall-using-asdm
