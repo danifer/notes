@@ -183,3 +183,6 @@ Get the current debian version:
   cat /etc/issue
   cat /etc/debian_version
   cat /etc/os-release
+
+Configure a single network card with multiple IP addresses
+  https://easyengine.io/tutorials/linux/multiple-ip-addresses/
