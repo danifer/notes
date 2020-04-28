@@ -11,6 +11,9 @@ Remove a user's password:
 Send an email from the command line:
     echo "My message" | mail -s subject user@gmail.com
 
+Change system timezone
+    dpkg-reconfigure tzdata
+
 Tar a directory:
     tar -zcvf filename.tar.gz /target/directory
 
