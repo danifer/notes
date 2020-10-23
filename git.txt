@@ -40,8 +40,14 @@ Get the local branches:
 Delete a local branch:
     git branch -d <branchname>
 
-Stage all changes to tracked files (including deletes)
+Stage new files and modified files, without deletions.
+    git add .
+
+Stage changes to tracked files (including deletes), does not add new files.
     git add -u
+
+Stage ALL changes.
+    git add -A
 
 Remove a file from version control (while keeping it in your local repository). Don't forget to update .gitignore.
     git rm --cached <file>
