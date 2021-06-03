@@ -61,3 +61,6 @@ grep plus tail to follow a file and look for words
 
 Find unique email addresses
     grep -ERho "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" . | sort | uniq
+
+Find and delete file names containing a string
+    grep -lRIZ foo . | xargs -0 rm -f --
