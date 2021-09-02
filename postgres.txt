@@ -1,0 +1,11 @@
+Connect to a database
+    psql -h{host} -U{username} {database}
+
+Turn on/off pretty formatting
+    \x on/off
+
+List databases
+    \list
+    \l
+
+
