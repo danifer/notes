@@ -1,5 +1,9 @@
 Create a database
-    createdb -e -E 'UTF-8' -O {dbowner} -h{host} -U{user} {database namne}
+    createdb -e -E 'UTF-8' -O {dbowner} -h{host} -U{user} {database name}
+
+Drop a database
+    dropdb {database}
+    DROP DATABASE {database}
 
 Connect to a database
     psql -h{host} -U{username} {database}
