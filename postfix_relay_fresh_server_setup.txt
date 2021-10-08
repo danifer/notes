@@ -23,6 +23,7 @@ Install postfix via mailutils
 
 Add allowed relay IPs to mynetworks
   /etc/postfix/main.cf
+  #You may need to contact server provider to unblock port 25
 
 Update reverse DNS with provider, and in Postfix
   /etc/postfix/main.cf
