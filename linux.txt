@@ -189,3 +189,7 @@ Get the current debian version:
 
 Configure a single network card with multiple IP addresses
   https://easyengine.io/tutorials/linux/multiple-ip-addresses/
+
+Did you know that Debian ships with an active firewall?
+  Open a port:
+    ufw allow [port]
