@@ -8,6 +8,9 @@ Drop a database
 Connect to a database
     psql -h{host} -U{username} {database}
 
+Restore a database
+    pg_restore -h{host} -U{username} -d{database} {dump-file}
+
 Turn on/off pretty formatting
     \x on/off
 
