@@ -1,110 +1,182 @@
-Create a new user:
-    adduser myusername
+### Administration ###
 
-Add user to group:
-    usermod -a -G groupname username
-        usermod -a -G sudo keeton
+    Create a new user:
+        adduser myusername
 
-Remove a user's password:
-    passwd --delete username
+    Add user to group:
+        usermod -a -G groupname username
+            usermod -a -G sudo keeton
 
-Send an email from the command line:
-    echo "My message" | mail -s subject user@gmail.com
+    Remove a user's password:
+        passwd --delete username
 
-Change system timezone
-    dpkg-reconfigure tzdata
+    Change system timezone
+        dpkg-reconfigure tzdata
 
-Tar a directory:
-    tar -zcvf filename.tar.gz /target/directory
+    Send an email from the command line:
+        echo "My message" | mail -s subject user@gmail.com
 
-Extract a .tar file
-    tar -xvf file.tar
+    Use NMAP to scan an IP range
+        Scan everything from 0-255
+            nmap -sP 192.168.1.0/24
+        Scan a specific range like 1-200
+            nmap -sP 192.168.1.1-200
 
-Extract a .tar.gz file
-    tar -xvzf file.tar.gz
+    Difference between usr, bin, sbin, etc.
+        https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 
-Pretty print JSON from the command line using Python
-    echo '{"foo": "lorem", "bar": "ipsum"}' | python -mjson.tool
+    Fix apt-get update "the following signatures couldn’t be verified because the public key is not available"
+        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
 
-Reverse search through history:
-    <ctlr>-R
+    Install from a .deb file
+        https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt
+            Install: dpkg -i /path/to/deb/file
+            followed by: apt-get install -f
+                This is to resolve unmet dependencies
 
-Go back to the previous directory:
-    cd -
+    Find the absolute file location of a running process
+        ls -l /proc/[PID]/exe
+          You can find the PID of a running process with 'ps aux | grep [process]'
 
-Copy files including hidden files like .gitignore
-    cp *.* DOES NOT WORK. Use rsync instead
-        rsync -av . /path/to/target
+    Remove the password from a ssh key:
+      ssh-keygen -p
+        You will be prompted for the key's current password
 
-Repeat your last command:
-    !!
-        sudo !!
+    Allocate addition swap space. Good for Composer's high memory requirement when you're on a virtual machine.
+      Be careful with the 'dd' command!
+      From: https://coderwall.com/p/grhteq/when-composer-cannot-allocate-memory
+        sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+        sudo /sbin/mkswap /var/swap.1
+        sudo /sbin/swapon /var/swap.1
 
-Rename with regex:
-    rename
-        rename 's/text_to_find/replace_with/' *.txt
+    Get the current debian version:
+      lsb_release -a
+      cat /etc/issue
+      cat /etc/debian_version
+      cat /etc/os-release
 
-List only subdirectories from the current directory:
-    ls -d */
+    Did you know that Debian ships with an active firewall?
+      Open a port:
+        ufw allow [port]
 
-List files, but don't organize them. Much faster.
-    ls -U
 
-Compare two directories for files that differ. Return filenames only.
-    diff -qr dir1 dir2
+### File & Directory Manipulation ###
 
-Insert the arguments from your last bash command into your current bash command:
-    <alt>-.
+    Tar a directory:
+        tar -zcvf filename.tar.gz /target/directory
 
-List the most recently modified files in a readable format (using the power of the gods)
-    ls -thor
+    Extract a .tar file
+        tar -xvf file.tar
 
-Set an ENVIRONMENT variable
-    export EDITOR=/usr/bin/nano #sets the default editor to nano
+    Extract a .tar.gz file
+        tar -xvzf file.tar.gz
 
-Compressing mysqldump output with gzip
-    Compressing:
-        mysqldump <mysqldump options> | gzip > outputfile.sql.gz
-    Restoring:
-        gunzip < outputfile.sql.gz | mysql <mysql options>
-    Alternative one-liner:
-        mysqldump mydatabase -u root -p | gzip -c | cat > mydatabase-$(date +%Y-%m-%d-%H.%M.%S).sql.gz
+    Rename with regex:
+        rename
+            rename 's/text_to_find/replace_with/' *.txt
 
-Show mysql database info
-    Show tables
-        SHOW TABLES;
-    Show columns on a table
-        SHOW COLUMNS from TABLE;
+    List only subdirectories from the current directory:
+        ls -d */
 
-List available disk devices
-    fdisk -l
+    List files, but don't organize them. Much faster.
+        ls -U
 
-Mount all drives listed under /etc/fstab (if you make a change and don't want to reboot)
-    mount -a
+    List the most recently modified files in a readable format (using the power of the gods)
+        ls -thor
 
-Suspend the current foreground job
-    ctrl-z
-        List suspended jobs
-            jobs
-        Move a job to the background
-            bg
-        Move a job to the foreground
-            fg
+    Find large directories
+         du -hsx * | sort -rh | head -10 #human readable, current directory
 
-Schedule one-off jobs (use crontab for recurring jobs)
-    Schedule a new job
-        at now +X (hours|minutes|seconds)
-        at> rm ~/my_file.txt;
-        at> echo "file deleted" > ~/at.log;
-        at> <EOT> (ctrl-d when you are finished entering commands)
 
-    List scheduled jobs
-        atq
+### Shell ###
 
-    Remove a scheduled job
-        atrm X (where X is the job number)
+    Reverse search through history:
+        <ctlr>-R
 
-Date commands
+    Go back to the previous directory:
+        cd -
+
+    Copy files including hidden files like .gitignore
+        cp *.* DOES NOT WORK. Use rsync instead
+            rsync -av . /path/to/target
+
+    Repeat your last command:
+        !!
+            sudo !!
+
+    Insert the arguments from your last bash command into your current bash command:
+        <alt>-.
+
+    Set an ENVIRONMENT variable:
+        export EDITOR=/usr/bin/nano #sets the default editor to nano
+
+    Create an alias:
+        alias [id]='[command to alias]'
+
+    List aliases:
+        alias
+
+
+### MySql ###
+
+    Compressing mysqldump output with gzip
+        Compressing:
+            mysqldump <mysqldump options> | gzip > outputfile.sql.gz
+        Restoring:
+            gunzip < outputfile.sql.gz | mysql <mysql options>
+        Alternative one-liner:
+            mysqldump mydatabase -u root -p | gzip -c | cat > mydatabase-$(date +%Y-%m-%d-%H.%M.%S).sql.gz
+
+    Show mysql database info
+        Show tables
+            SHOW TABLES;
+        Show columns on a table
+            SHOW COLUMNS from TABLE;
+
+    Tunnel local MySql server through SSH. This lets you connect your local dev environment to a production MySql server over SSH. Useful for real-time debugging of edge cases where you don't want to or can't dump the database from the production server.
+        ssh -L [PORT]:[LOCAL ADDRESS]:[PORT] USER@REMOTE-SERVER-ADDRESS
+            ssh -p 1246 -L 3306:127.0.0.1:3306 keeton@dfw1.danifer.com
+
+
+### Devices ###
+
+    List available disk devices
+        fdisk -l
+
+    Mount all drives listed under /etc/fstab (if you make a change and don't want to reboot)
+        mount -a
+
+    Configure a single network card with multiple IP addresses
+      https://easyengine.io/tutorials/linux/multiple-ip-addresses/
+
+
+### Scheduling ###
+
+    Suspend the current foreground job
+        ctrl-z
+            List suspended jobs
+                jobs
+            Move a job to the background
+                bg
+            Move a job to the foreground
+                fg
+
+    Schedule one-off jobs (use crontab for recurring jobs)
+        Schedule a new job
+            at now +X (hours|minutes|seconds)
+            at> rm ~/my_file.txt;
+            at> echo "file deleted" > ~/at.log;
+            at> <EOT> (ctrl-d when you are finished entering commands)
+
+        List scheduled jobs
+            atq
+
+        Remove a scheduled job
+            atrm X (where X is the job number)
+
+
+### Dates ###
+
     Convert UNIX epoch time/timestamp to readable format
         date -d @1402423448
 
@@ -132,67 +204,32 @@ Date commands
     What time will 04:00 UTC be in CST?
         TZ=America/Chicago date -d "04:00 UTC"
 
-Find large directories
-     du -hsx * | sort -rh | head -10 #human readable, current directory
 
-Echo md5 sums via the command line
-    echo -n sampletext | md5sum
+### One-Liners ###
 
-Use NMAP to scan an IP range
-    Scan everything from 0-255
-        nmap -sP 192.168.1.0/24
-    Scan a specific range like 1-200
-        nmap -sP 192.168.1.1-200
+    Pretty print JSON from the command line using Python
+        echo '{"foo": "lorem", "bar": "ipsum"}' | python -mjson.tool
 
-Base64 encode a string
-    echo -n 'my_string' | base64
+    Compare two directories for files that differ. Return filenames only.
+        diff -qr dir1 dir2
 
-Decode base64 encoded string
-    echo -n c2NvdHRsaW51eC5jb20gcm9ja3MK | base64 -d
+    Echo md5 sums via the command line
+        echo -n sampletext | md5sum
 
-Use watch command on a compound or chained command
-    watch 'ps aux | grep php'
+    Base64 encode a string
+        echo -n 'my_string' | base64
 
-Tunnel local MySql server through SSH. This lets you connect your local dev environment to a production MySql server over SSH. Useful for real-time debugging of edge cases where you don't want to or can't dump the database from the production server.
-    ssh -L [PORT]:[LOCAL ADDRESS]:[PORT] USER@REMOTE-SERVER-ADDRESS
-        ssh -p 1246 -L 3306:127.0.0.1:3306 keeton@dfw1.danifer.com
+    Decode base64 encoded string
+        echo -n c2NvdHRsaW51eC5jb20gcm9ja3MK | base64 -d
 
-Difference between usr, bin, sbin, etc.
-    https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+    Use watch command on a compound or chained command
+        watch 'ps aux | grep php'
 
-Fix apt-get update "the following signatures couldn’t be verified because the public key is not available"
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+    Bulk delete keys from a Redis store with intermittent pauses.
+        redis-cli keys "*" | while read LINE; do NUM=$[$NUM+1]; if [ $NUM -ge 5000 ]; then echo sleeping; sleep 10; NUM=0; else redis-cli -n 3 del $LINE; fi; done;
 
-Install from a .deb file
-    https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt
-        Install: dpkg -i /path/to/deb/file
-        followed by: apt-get install -f
-            This is to resolve unmet dependencies
+    Find all of the possible configured domains for an apache server.
+        grep -lRws --no-filename 'VirtualHost' . | xargs -d '\n' grep -Rws --no-filename -E "ServerName|ServerAlias" | sort --unique | grep -Po 'Server.{0,1000}' | grep -v '>' | grep -v '"'| grep -v 'example'| grep -v 'tld' | grep '\.' | sort --unique | awk -F"[ ]+" '{print $2}' | grep '\.' | sort --unique
 
-Find the absolute file location of a running process
-    ls -l /proc/[PID]/exe
-      You can find the PID of a running process with 'ps aux | grep [process]'
-
-Remove the password from a ssh key:
-  ssh-keygen -p
-    You will be prompted for the key's current password
-
-Allocate addition swap space. Good for Composer's high memory requirement when you're on a virtual machine.
-  Be careful with the 'dd' command!
-  From: https://coderwall.com/p/grhteq/when-composer-cannot-allocate-memory
-    sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
-    sudo /sbin/mkswap /var/swap.1
-    sudo /sbin/swapon /var/swap.1
-
-Get the current debian version:
-  lsb_release -a
-  cat /etc/issue
-  cat /etc/debian_version
-  cat /etc/os-release
-
-Configure a single network card with multiple IP addresses
-  https://easyengine.io/tutorials/linux/multiple-ip-addresses/
-
-Did you know that Debian ships with an active firewall?
-  Open a port:
-    ufw allow [port]
+    Run Redis commands on all keys matching a pattern.
+        redis-cli -n 3 keys "*" | while read LINE; do NUM=$[$NUM+1]; redis-cli -n 3 ttl $LINE; done;
