@@ -24,6 +24,9 @@ Make a new branch
 List available branches and current branch:
     git branch -l
 
+List branches by last commit date
+    git branch --sort=-committerdate
+
 Get the remote url:
     git remote -v
 
