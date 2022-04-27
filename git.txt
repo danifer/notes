@@ -83,6 +83,9 @@ Undo a merge before commit. Syntax depends on git version: http://stackoverflow.
     git merge --abort
     git reset --hard
 
+Reset your branch to match the remote repository. Like if you accidentally merged the wrong thing.
+    git reset --hard origin/master
+
 Review merge results without committing or fast-forwarding. Basically a dry-run option
     git merge --no-commit --no-ff $BRANCH
     
