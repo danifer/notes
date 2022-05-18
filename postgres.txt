@@ -5,6 +5,9 @@ Drop a database
     dropdb {database}
     DROP DATABASE {database}
 
+Rename a database
+    ALTER DATABASE name RENAME TO new_name
+
 Connect to a database
     psql -h{host} -U{username} {database}
 
