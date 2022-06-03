@@ -31,3 +31,17 @@ Get tables matching %name%
 
 Get columns matching %name%
     SELECT table_name, column_name FROM information_schema.columns WHERE column_name LIKE '%name%' ORDER BY table_name;
+
+Create data and export to csv
+
+    BEGIN;
+
+    CREATE TEMP VIEW _results AS (
+        SELECT
+            somedata
+        FROM somewhere
+    );
+
+    \COPY (SELECT * FROM _results) TO '~/data.csv' DELIMITER ',' CSV HEADER;
+
+    ROLLBACK;

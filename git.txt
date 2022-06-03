@@ -101,3 +101,6 @@ Show the differences for a specific commit
 
 Find the branches that a commit is on
     git branch -a --contains <commit>
+
+Checkout a specific file from another branch
+    git checkout <branch> -- <file_path>
