@@ -28,6 +28,9 @@
     Fix apt-get update "the following signatures couldn’t be verified because the public key is not available"
         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
 
+    Fix moved repository, or "This must be accepted explicitly before updates for this repository can be applied. See apt-secure(8) manpage for details"
+        apt-get update --allow-releaseinfo-change
+
     Install from a .deb file
         https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt
             Install: dpkg -i /path/to/deb/file
