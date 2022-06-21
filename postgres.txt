@@ -1,8 +1,12 @@
+
+Install Postgres from Homebrew:
+    brew update; brew install postgresql
+
 Create a database
     createdb -e -E 'UTF-8' -O {dbowner} -h{host} -U{user} {database name}
 
 Drop a database
-    dropdb {database}
+    dropdb {database} -h{host} -U{user}
     DROP DATABASE {database}
 
 Rename a database
@@ -25,6 +29,28 @@ List databases
 Switch database
     \connect {databasename}
     \c {databasename}
+
+List datbase users
+    \du
+
+Add user (role)
+    createuser {username}
+
+Configure Postgres for remote access
+    PostgreSQL Client Authentication Configuration File
+        /usr/local/var/postgres/pg_hba.conf
+            OR find / -name pg_hba.conf
+        Update the trusted connections
+            https://stackoverflow.com/questions/35722132/cant-connect-to-greenplum-with-error-message-no-pg-hba-conf-entry
+
+    PostgreSQL configuration file
+        /usr/local/var/postgres/postgresql.conf
+            OR find / -name postgressql.conf
+        Update the listen_addresses section to allow remote connections.
+            https://www.bigbinary.com/blog/configure-postgresql-to-allow-remote-connection
+
+Restart postgres on Mac
+    brew services restart postgresql
 
 Get tables matching %name%
     SELECT table_schema, table_name  FROM information_schema.tables WHERE table_name LIKE '%name%'

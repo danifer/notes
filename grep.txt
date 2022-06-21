@@ -22,6 +22,12 @@ Don't display the filename
 Search for full words, not substrings
     grep -w
 
+OR operators
+    Standard
+        grep 'pattern1\|pattern2' filename
+    Extended regexp
+        grep -E 'pattern1|pattern2' filename
+
 grep for a string and return the full text from all matching files (concatentated with \n)
     grep -R 'string' . | xargs -d '\n'
 
