@@ -27,6 +27,9 @@ List available branches and current branch:
 List branches by last commit date
     git branch --sort=-committerdate
 
+List branches that have been merged into branch:
+    git branch --merged master
+
 Get the remote url:
     git remote -v
 
