@@ -131,6 +131,9 @@
     List aliases:
         alias
 
+    Execute a remote command via ssh:
+        ssh user@host [command1];[command2]
+            ssh keeton@server.com date;who;df -h
 
 ### Devices ###
 
