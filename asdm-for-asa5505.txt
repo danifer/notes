@@ -26,4 +26,4 @@ Some gotchas:
   -If you're looking for files, check your desktop "Danifer" entitled "asdm asa5505 resources". I saved a copy of Java 1.6 Runtime Environment, the ASDM launcher setup program, and some screenshots for the proxy/tunnel setup.
 
 Configuring multiple external IP ranges
-  https://community.spiceworks.com/topic/1602602-how-to-add-a-second-subnet-to-cisco-asa-firewall-using-asdm
+    https://community.spiceworks.com/topic/1602602-how-to-add-a-second-subnet-to-cisco-asa-firewall-using-asdm

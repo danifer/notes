@@ -14,4 +14,4 @@ Goto matching brace
     Ctrl + M
 
 Python terminal
-Ctrl + `
+    Ctrl + `

@@ -1,4 +1,3 @@
-
 Install Postgres from Homebrew:
     brew update; brew install postgresql
 
