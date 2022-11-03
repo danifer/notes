@@ -17,4 +17,22 @@ Change root password:
 
 
 Get the sizes of the installed databases.
-	SELECT table_schema AS "Database", ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema;
+    SELECT table_schema AS "Database", ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema;
+
+Compressing mysqldump output with gzip
+    Compressing:
+        mysqldump <mysqldump options> | gzip > outputfile.sql.gz
+    Restoring:
+        gunzip < outputfile.sql.gz | mysql <mysql options>
+    Alternative one-liner:
+        mysqldump mydatabase -u root -p | gzip -c | cat > mydatabase-$(date +%Y-%m-%d-%H.%M.%S).sql.gz
+
+Show mysql database info
+    Show tables
+        SHOW TABLES;
+    Show columns on a table
+        SHOW COLUMNS from TABLE;
+
+Tunnel local MySql server through SSH. This lets you connect your local dev environment to a production MySql server over SSH. Useful for real-time debugging of edge cases where you don't want to or can't dump the database from the production server.
+    ssh -L [PORT]:[LOCAL ADDRESS]:[PORT] USER@REMOTE-SERVER-ADDRESS
+        ssh -p 1246 -L 3306:127.0.0.1:3306 keeton@dfw1.danifer.com

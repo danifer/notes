@@ -113,32 +113,23 @@
     Set an ENVIRONMENT variable:
         export EDITOR=/usr/bin/nano #sets the default editor to nano
 
+    View all ENVIRONMENT variables:
+        export -p
+
+    Manipulate your $PATH
+        View current $PATH
+            echo $PATH
+        Add a directory to your $PATH
+            export PATH="$HOME/bin:$PATH"
+                - Valid only for the current session. You need to make the change in your shell config file (~/.bashrc; ~/.zshrc).
+        Read the new shell config file to update saved variables:
+            source ~/.bashrc 
+
     Create an alias:
         alias [id]='[command to alias]'
 
     List aliases:
         alias
-
-
-### MySql ###
-
-    Compressing mysqldump output with gzip
-        Compressing:
-            mysqldump <mysqldump options> | gzip > outputfile.sql.gz
-        Restoring:
-            gunzip < outputfile.sql.gz | mysql <mysql options>
-        Alternative one-liner:
-            mysqldump mydatabase -u root -p | gzip -c | cat > mydatabase-$(date +%Y-%m-%d-%H.%M.%S).sql.gz
-
-    Show mysql database info
-        Show tables
-            SHOW TABLES;
-        Show columns on a table
-            SHOW COLUMNS from TABLE;
-
-    Tunnel local MySql server through SSH. This lets you connect your local dev environment to a production MySql server over SSH. Useful for real-time debugging of edge cases where you don't want to or can't dump the database from the production server.
-        ssh -L [PORT]:[LOCAL ADDRESS]:[PORT] USER@REMOTE-SERVER-ADDRESS
-            ssh -p 1246 -L 3306:127.0.0.1:3306 keeton@dfw1.danifer.com
 
 
 ### Devices ###
@@ -228,11 +219,5 @@
     Use watch command on a compound or chained command
         watch 'ps aux | grep php'
 
-    Bulk delete keys from a Redis store with intermittent pauses.
-        redis-cli keys "*" | while read LINE; do NUM=$[$NUM+1]; if [ $NUM -ge 5000 ]; then echo sleeping; sleep 10; NUM=0; else redis-cli -n 3 del $LINE; fi; done;
-
     Find all of the possible configured domains for an apache server.
         grep -lRws --no-filename 'VirtualHost' . | xargs -d '\n' grep -Rws --no-filename -E "ServerName|ServerAlias" | sort --unique | grep -Po 'Server.{0,1000}' | grep -v '>' | grep -v '"'| grep -v 'example'| grep -v 'tld' | grep '\.' | sort --unique | awk -F"[ ]+" '{print $2}' | grep '\.' | sort --unique
-
-    Run Redis commands on all keys matching a pattern.
-        redis-cli -n 3 keys "*" | while read LINE; do NUM=$[$NUM+1]; redis-cli -n 3 ttl $LINE; done;
