@@ -6,4 +6,4 @@ Send an email from the command line
 
 Delete messages by date range:
     In Mutt, SHIFT-D for pattern delete
-	Type the pattern: ~d 01/01/2016-31/12/2016 and press Enter
+    Type the pattern: ~d 01/01/2016-31/12/2016 and press Enter

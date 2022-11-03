@@ -30,19 +30,19 @@ Write raid status to a file so we can update it later with a cron job
 
 If it's a Dell machine, add openmanage
 - Add the Dell repository to /etc/apt/sources.list :
-	#Dell openmanage
-	deb http://linux.dell.com/repo/community/deb/latest /
+    #Dell openmanage
+    deb http://linux.dell.com/repo/community/deb/latest /
 - aptitude install srvadmin-all
 - restart the dataeng service: /etc/init.d/dataeng
 - Add the Dell command path to /root/.bashrc :
-	PATH=$PATH:/opt/dell/srvadmin/sbin
+    PATH=$PATH:/opt/dell/srvadmin/sbin
 - Run 'source /root/.bashrc' to activate the change
 
 - Example usage:
-	root@ying:~> omreport chassis
-	root@ying:~> omreport storage  controller
-	root@ying:~> omreport storage  battery controller=0
-	root@ying:~> omreport system summary
+    root@ying:~> omreport chassis
+    root@ying:~> omreport storage  controller
+    root@ying:~> omreport storage  battery controller=0
+    root@ying:~> omreport system summary
 -http://support.dell.com/support/edocs/software/svradmin/5.1/en/omss_ug/html/cli.html
     
 edit /etc/hosts to respect local network

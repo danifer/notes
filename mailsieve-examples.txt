@@ -5,6 +5,3 @@
     redirect "recipient@example.com";
     keep;
   }
-
-
-
