@@ -224,3 +224,6 @@
 
     Find all of the possible configured domains for an apache server.
         grep -lRws --no-filename 'VirtualHost' . | xargs -d '\n' grep -Rws --no-filename -E "ServerName|ServerAlias" | sort --unique | grep -Po 'Server.{0,1000}' | grep -v '>' | grep -v '"'| grep -v 'example'| grep -v 'tld' | grep '\.' | sort --unique | awk -F"[ ]+" '{print $2}' | grep '\.' | sort --unique
+
+    Convert a file to UTF-8
+        iconv -f utf-8 -t utf-8 -c input_file > output_file
