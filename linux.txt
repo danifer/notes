@@ -227,3 +227,6 @@
 
     Convert a file to UTF-8
         iconv -f utf-8 -t utf-8 -c input_file > output_file
+
+    Determine how long a process has been running
+        ps -p [PID] -o etime
