@@ -135,6 +135,9 @@
         ssh user@host [command1];[command2]
             ssh keeton@server.com date;who;df -h
 
+    Make the speaker beep; make a noise:
+        echo -e '\a'
+
 ### Devices ###
 
     List available disk devices
