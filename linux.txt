@@ -90,8 +90,17 @@
     Find large directories
          du -hsx * | sort -rh | head -10 #human readable, current directory
 
+    Test if a file exists
+        test -f file.txt OR [ -f file.txt ]
+        test -f file.txt && echo 'File Exists'
+
+    Prepend text to a file. Opposite of >>
+        echo -e "data1\ndata2\n$(cat file.txt)" > file.txt
 
 ### Shell ###
+
+    Show command history
+        history
 
     Reverse search through history:
         <ctlr>-R
