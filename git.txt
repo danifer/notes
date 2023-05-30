@@ -107,3 +107,7 @@ Find the branches that a commit is on
 
 Checkout a specific file from another branch
     git checkout <branch> -- <file_path>
+
+Stash all files, including untracked files
+    git stash --include-untracked
+    git stash -u //shorthand
