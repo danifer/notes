@@ -102,6 +102,9 @@ Update remote tracking branches
 Show the differences for a specific commit
     git show [commit id]
 
+Show the differences for a specific file between branches
+    git diff mybranch master -- somefile.php
+
 Find the branches that a commit is on
     git branch -a --contains <commit>
 
