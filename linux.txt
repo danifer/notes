@@ -21,6 +21,8 @@
             nmap -sP 192.168.1.0/24
         Scan a specific range like 1-200
             nmap -sP 192.168.1.1-200
+        Quick scan for network inventory
+            nmap -sn 192.168.1.0/24
 
     Difference between usr, bin, sbin, etc.
         https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
