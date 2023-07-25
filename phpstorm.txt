@@ -1,0 +1,2 @@
+Run linter:
+composer ci

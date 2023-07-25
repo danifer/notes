@@ -17,6 +17,9 @@ Connect to a database
 Restore a database
     pg_restore -h{host} -U{username} -d{database} {dump-file}
 
+Restore a database with psql
+    psql -U [user] -d [database] < ~/dump.sql
+
 Turn on/off pretty formatting
     \x on/off
     \x auto
