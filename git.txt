@@ -30,6 +30,9 @@ List branches by last commit date
 List branches that have been merged into branch:
     git branch --merged master
 
+Find the nearest parent branch
+    git log --first-parent
+
 Get the remote url:
     git remote -v
 
