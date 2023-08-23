@@ -244,3 +244,6 @@
 
     Determine how long a process has been running
         ps -p [PID] -o etime
+
+    Deep debug of SSL certificate and chain
+        echo | openssl s_client -showcerts -connect example.com:443
