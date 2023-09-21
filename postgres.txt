@@ -60,6 +60,15 @@ Get tables matching %name%
 Get columns matching %name%
     SELECT table_name, column_name FROM information_schema.columns WHERE column_name LIKE '%name%' ORDER BY table_name;
 
+Export data to STDOUT from command line
+    psql -h localhost -U [db_user] -d [db_name] -c "COPY (select * from [table_name]) TO STDOUT;"
+
+    psql -X -A -w -t -h localhost -U [db_user] -d [db_name] -c "COPY (select * from [table_name]) TO STDOUT;"
+        -X, --no-psqlrc          do not read startup file (~/.psqlrc)
+        -A, --no-align           unaligned table output mode
+        -w, --no-password        never prompt for password
+        -t, --tuples-only        print rows only
+
 Create data and export to csv
 
     BEGIN;
@@ -73,3 +82,14 @@ Create data and export to csv
     \COPY (SELECT * FROM _results) TO '~/data.csv' DELIMITER ',' CSV HEADER;
 
     ROLLBACK;
+
+Dump/Export SQL for a single table
+    pg_dump --host localhost --port 5432 --username [db_user] --format plain --verbose --file ~/var/[db_name].[table_name].dump --table public.account [db_name]
+
+Dump/Export SQL for a single table, but without table parameters. INSERT statments only
+    pg_dump -h localhost -U [db_user] --column-inserts --data-only --table=[table_name] -f ~/var/[table_name].sql [db_name]
+
+Restore that table
+    pg_restore --host localhost --port 5432 --username [db_user] --dbname "[db_name]" --table public.account -Ft --verbose ~/var/[db_name].[table_name].dump
+
+
