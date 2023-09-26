@@ -11,7 +11,10 @@ Find and delete files older than X days
     find /directory/location -name '*' -type f -daystart -mtime +1 -exec rm -f {} \;
 
 Find and replace across multiple files
-    find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'
+    Original for Linux
+        find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'
+    Alternate for Mac
+        find . -name "*.php" -exec sed -i '' 's/find/replace/g' {} \;
 
 Find files by permission
     find . -type f -perm 0777
