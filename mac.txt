@@ -1,3 +1,6 @@
 Switch PHP versions
     brew link php@7.4
     brew link php@8.0
+
+Display an alert message from the terminal
+    osascript -e 'display alert "Reminder" message "Did the cronjob run?"'

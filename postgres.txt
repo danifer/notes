@@ -69,6 +69,10 @@ Export data to STDOUT from command line
         -w, --no-password        never prompt for password
         -t, --tuples-only        print rows only
 
+Export data to STDOUT with some formatting options
+    psql -h localhost -U [db_user] -d [db_name] -c "COPY (select * from [table_name]) TO STDOUT;" | sed 's/\t\t*/\n/g'
+    psql -h localhost -U [db_user] -d [db_name] -c "COPY (select [json_field] from [table_name]) TO STDOUT;" | python -mjson.tool
+
 Create data and export to csv
 
     BEGIN;
