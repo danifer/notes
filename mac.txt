@@ -4,3 +4,6 @@ Switch PHP versions
 
 Display an alert message from the terminal
     osascript -e 'display alert "Reminder" message "Did the cronjob run?"'
+
+Find files with image metadata
+    mdfind image -onlyin .
