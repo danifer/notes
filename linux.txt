@@ -7,6 +7,9 @@
         usermod -a -G groupname username
             usermod -a -G sudo keeton
 
+    List all groups:
+        cat /etc/gropu
+
     Remove a user's password:
         passwd --delete username
 
@@ -153,9 +156,23 @@
 
     List available disk devices
         fdisk -l
+        lsblk -f
+
+    List available USB devices
+        lsusb
 
     Mount all drives listed under /etc/fstab (if you make a change and don't want to reboot)
         mount -a
+
+    Wipe a drive
+        wipefs -a /dev/sdX
+
+    Partition a drive
+        parted /dev/sfX
+
+    Find optimal start and end location for parted
+        https://blog.hqcodeshop.fi/archives/273-GNU-Parted-Solving-the-dreaded-The-resulting-partition-is-not-properly-aligned-for-best-performance.html
+            /root/bin/parted_mkpart_calc.sh sdX
 
     Configure a single network card with multiple IP addresses
       https://easyengine.io/tutorials/linux/multiple-ip-addresses/
