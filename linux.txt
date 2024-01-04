@@ -3,9 +3,15 @@
     Create a new user:
         adduser myusername
 
+    Passwordless sudo:
+        visudo; "%sudo         ALL = (ALL) NOPASSWD: ALL"
+
     Add user to group:
         usermod -a -G groupname username
             usermod -a -G sudo keeton
+
+    Copy SSH key to a server
+        ssh-copy-id -i ~/.ssh/mykey user@host
 
     List all groups:
         cat /etc/gropu
