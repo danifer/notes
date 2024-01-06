@@ -187,6 +187,8 @@
     Configure a single network card with multiple IP addresses
       https://easyengine.io/tutorials/linux/multiple-ip-addresses/
 
+    Get the serial number of the machine
+        sudo dmidecode -s system-serial-number
 
 ### Scheduling ###
 
