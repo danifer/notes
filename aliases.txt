@@ -1,0 +1,6 @@
+..='cd ..'
+beep='echo -e "\a" && echo -e "\a" && echo -e "\a"'
+grep='grep --color=auto'
+ls='ls -laFG'
+which-command=whence
+
