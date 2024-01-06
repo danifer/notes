@@ -10,6 +10,10 @@
         usermod -a -G groupname username
             usermod -a -G sudo keeton
 
+    List a user's groups:
+        groups
+        groups [username]
+
     Copy SSH key to a server
         ssh-copy-id -i ~/.ssh/mykey user@host
 
