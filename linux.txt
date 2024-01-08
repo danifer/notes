@@ -190,6 +190,11 @@
     Get the serial number of the machine
         sudo dmidecode -s system-serial-number
 
+    Use smartctl to get drive information
+        smartctl -HA /dev/sda
+            -H: health
+            -A: attributes
+
 ### Scheduling ###
 
     Suspend the current foreground job

@@ -24,3 +24,6 @@ Find, tar, gzip with name based on original filename, then delete files. Useful 
 
 Find and delete files older than 10 days in the /tmp directory
     find /tmp -ctime +10 -exec rm -rf {} +
+
+Find the latest file (recursively) in the current directory. This will take a while, and you probably want to output to a log file.
+    find $PWD -type f -printf "%T@ %p\n" | sort -n | cut -d' ' -f 2- | tail -n 1
