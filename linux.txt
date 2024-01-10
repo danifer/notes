@@ -171,6 +171,9 @@
     List available USB devices
         lsusb
 
+    List available block devices to determine physical location
+        lsblk -o HCTL,MODEL,PATH,SIZE,MOUNTPOINT,MOUNTPOINTS,TYPE,VENDOR
+
     Mount all drives listed under /etc/fstab (if you make a change and don't want to reboot)
         mount -a
 
