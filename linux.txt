@@ -164,6 +164,10 @@
 
 ### Devices ###
 
+    Make a hard drive enclosure blink. Essentially, this command attempts to copy from the source disk to the garbage can. This process will trigger your enclosure LED to blink continuously.
+        dd if=/dev/sdX of=/dev/null
+        DON'T FORGET TO STOP THIS PROCESS
+
     List available disk devices
         fdisk -l
         lsblk -f
