@@ -7,3 +7,14 @@ Display an alert message from the terminal
 
 Find files with image metadata
     mdfind image -onlyin .
+
+Disk information
+    diskutil listFilesystems
+    diskutil list
+
+Partition a drive (https://tobywf.com/2017/01/diskutil/)
+    sudo diskutil partitionDisk disk3 1 JHFS+ one R
+
+Install ext4 filesystem. Requires e2fsprogs (https://apple.stackexchange.com/questions/171506/formatting-usb-disk-as-ext3-on-mac)
+    brew install e2fsprogs
+    sudo $(brew --prefix e2fsprogs)/sbin/mkfs.ext4 /dev/diskXsX
