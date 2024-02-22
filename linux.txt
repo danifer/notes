@@ -77,6 +77,11 @@
       Open a port:
         ufw allow [port]
 
+    iptables
+        Example add rule:
+            iptables -A INPUT -p tcp -m state --state NEW --dport 9100 -j ACCEPT
+        Example insert rule:
+            iptables -I INPUT 5 -p tcp -m state --state NEW --dport 9100 -j ACCEPT
 
 ### File & Directory Manipulation ###
 
@@ -163,6 +168,9 @@
         echo -e '\a'
 
 ### Devices ###
+
+    Get system information
+        dmidecode -t system
 
     Make a hard drive enclosure blink. Essentially, this command attempts to copy from the source disk to the garbage can. This process will trigger your enclosure LED to blink continuously.
         dd if=/dev/sdX of=/dev/null
