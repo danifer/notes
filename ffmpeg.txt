@@ -1,3 +1,5 @@
+From: https://superuser.com/questions/1256223/combine-mov-video-files
+
 Create a "to_merge.txt" file containing a list of files to combine
     find . -type f -iname "*.mov" | sort -V | awk '{print "file \x27" $0 "\x27"}' > to_merge.txt
 
