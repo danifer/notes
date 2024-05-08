@@ -8,6 +8,9 @@ Display an alert message from the terminal
 Find files with image metadata
     mdfind image -onlyin .
 
+Rename files to all lowercase
+    for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
+
 Disk information
     diskutil listFilesystems
     diskutil list

@@ -77,6 +77,11 @@
       Open a port:
         ufw allow [port]
 
+    iptables
+        Example add rule:
+            iptables -A INPUT -p tcp -m state --state NEW --dport 9100 -j ACCEPT
+        Example insert rule:
+            iptables -I INPUT 5 -p tcp -m state --state NEW --dport 9100 -j ACCEPT
 
 ### File & Directory Manipulation ###
 
@@ -164,6 +169,9 @@
 
 ### Devices ###
 
+    Get system information
+        dmidecode -t system
+
     Make a hard drive enclosure blink. Essentially, this command attempts to copy from the source disk to the garbage can. This process will trigger your enclosure LED to blink continuously.
         dd if=/dev/sdX of=/dev/null
         DON'T FORGET TO STOP THIS PROCESS
@@ -180,6 +188,9 @@
 
     Mount all drives listed under /etc/fstab (if you make a change and don't want to reboot)
         mount -a
+
+    Mount an .iso disk image
+        mount -o loop my_disk.iso /mnt/iso
 
     Wipe a drive
         wipefs -a /dev/sdX
