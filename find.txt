@@ -27,3 +27,7 @@ Find and delete files older than 10 days in the /tmp directory
 
 Find the latest file (recursively) in the current directory. This will take a while, and you probably want to output to a log file.
     find $PWD -type f -printf "%T@ %p\n" | sort -n | cut -d' ' -f 2- | tail -n 1
+
+Find files between date range
+    find $PWD -type f -newermt "2024-04-01" ! -newermt "2024-06-01"
+
