@@ -1,3 +1,9 @@
+
+Reduce video size:
+    ffmpeg -i input_file.mp4 -vcodec libx264 -crf 24 output_file.mp4
+
+
+Concatenate video files:
 From: https://superuser.com/questions/1256223/combine-mov-video-files
 
 Create a "to_merge.txt" file containing a list of files to combine
