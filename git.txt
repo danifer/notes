@@ -30,6 +30,10 @@ List branches by last commit date
 List branches that have been merged into branch:
     git branch --merged master
 
+List tags
+    git tag
+    git tag --sort=[type]
+
 Find the nearest parent branch
     git log --first-parent
 
