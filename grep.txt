@@ -65,6 +65,9 @@ grep backwards through a file
 grep plus tail to follow a file and look for words
     tail -f file.log | grep "string"
 
+grep plus tail to filter out results with words
+    tail - logfile.log | grep -Ev '(filter1|filter2)'
+
 Find unique email addresses
     grep -ERho "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" . | sort | uniq
 
