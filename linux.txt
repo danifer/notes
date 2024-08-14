@@ -107,6 +107,9 @@
     List the most recently modified files in a readable format (using the power of the gods)
         ls -thor
 
+    List only filenames (for piping to xargs, for example)
+        ls -1
+
     Find large directories
          du -hsx * | sort -rh | head -10 #human readable, current directory
 
@@ -269,6 +272,11 @@
 
 
 ### One-Liners ###
+
+    Loop through commands indefinitely.
+      while [ true ]; do date; sleep 1; done
+      while [ true ]; do echo $(psql -hlocalhost -U[username] [datbase] -c "\COPY (SELECT 
+count(*) FROM [table]) TO STDOUT;"); sleep 1; done
 
     Pretty print JSON from the command line using Python
         echo '{"foo": "lorem", "bar": "ipsum"}' | python -mjson.tool
