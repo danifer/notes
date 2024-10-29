@@ -6,6 +6,9 @@ Undo your last commit, so you can redo it.
         Note the --soft flag: this makes sure that the changes in undone revisions are preserved.
         If you don't want to keep these changes, use the --hard flag.
 
+Update the message for a commit
+    git commit --amend -m "an updated commit message"
+
 Get information on the last commit for the current branch:
     git log -1
 
@@ -105,6 +108,9 @@ Initialize a new repository
 
 Update remote tracking branches
    git fetch
+
+Force git to fetch ALL branches from remote
+    for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done
 
 Show the differences for a specific commit
     git show [commit id]
