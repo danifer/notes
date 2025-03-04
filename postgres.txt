@@ -4,6 +4,12 @@ Install Postgres from Homebrew:
 Create a database
     createdb -e -E 'UTF-8' -O {dbowner} -h{host} -U{user} {database name}
 
+Clone a database (must be inactive/no active connections)
+    CREATE DATABASE target_db WITH TEMPLATE source_db OWNER your_user;
+
+Make a copy of a database
+    createdb -O ownername -T originaldb newdb
+
 Drop a database
     dropdb {database} -h{host} -U{user}
     DROP DATABASE {database}
@@ -19,9 +25,6 @@ Restore a database
 
 Restore a database with psql
     psql -U [user] -d [database] < ~/dump.sql
-
-Make a copy of a database
-    createdb -O ownername -T originaldb newdb
 
 Turn on/off pretty formatting
     \x on/off
@@ -56,6 +59,21 @@ Configure Postgres for remote access
 
 Restart postgres on Mac
     brew services restart postgresql
+
+Get Size of the Current Database
+    SELECT pg_size_pretty(pg_database_size(current_database()));
+
+Get Size of a Specific Database
+    SELECT pg_size_pretty(pg_database_size('your_database_name'));
+
+List All Databases with Their Sizes
+    SELECT datname, pg_size_pretty(pg_database_size(datname)) 
+    FROM pg_database 
+    ORDER BY pg_database_size(datname) DESC;
+
+Get Total Disk Usage of PostgreSQL Cluster
+    SELECT pg_size_pretty(SUM(pg_database_size(datname))) 
+    FROM pg_database;
 
 Get tables matching %name%
     SELECT table_schema, table_name  FROM information_schema.tables WHERE table_name LIKE '%name%'
