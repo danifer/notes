@@ -2,7 +2,7 @@
 Reduce video size:
     ffmpeg -i input_file.mp4 -vcodec libx264 -crf 24 output_file.mp4
 
-Extract the audo stream from a video file:
+Extract the audio stream from a video file:
    ffmpeg -i input.mov -vn -acodec copy output.m4a
       -i input.mov : Specifies the input file.
       -vn : Disables the video stream.
