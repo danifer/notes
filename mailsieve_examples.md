@@ -2,7 +2,7 @@ Mail Sieve email filtering rules for forwarding, redirecting, and copying messag
 
 #Send a copy of an email to another recipient:
 
-  if address :is "to" "mail@example.com" {
-    redirect "recipient@example.com";
-    keep;
-  }
+    if address :is "to" "mail@example.com" {
+        redirect "recipient@example.com";
+        keep;
+    }

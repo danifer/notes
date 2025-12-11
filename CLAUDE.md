@@ -104,6 +104,81 @@ Create a database
 ...
 ```
 
+## Indentation Standards
+
+All files must use consistent indentation for hierarchical content organization.
+
+### Indentation Rules
+
+1. **Unit Size**: Use **4 spaces** as the standard indentation unit (not tabs)
+2. **Hierarchical Levels**:
+   - Primary level (commands, descriptions): **4 spaces**
+   - Secondary level (sub-commands, options): **8 spaces**
+   - Tertiary level (nested options, examples): **12 spaces**
+   - Continue in 4-space increments for deeper nesting
+
+### Examples
+
+**Correct indentation (4-space increments):**
+```markdown
+Create a database
+    createdb -e -E 'UTF-8' -O {dbowner} -h{host} -U{user} {database name}
+
+Clone a database (must be inactive/no active connections)
+    CREATE DATABASE target_db WITH TEMPLATE source_db OWNER your_user;
+
+Add user to group:
+    usermod -a -G groupname username
+        usermod -a -G sudo keeton
+```
+
+**Incorrect indentation (2-space or inconsistent):**
+```markdown
+Create a database
+  createdb -e -E 'UTF-8' -O {dbowner} -h{host} -U{user} {database name}
+
+Add user to group:
+  usermod -a -G groupname username
+    usermod -a -G sudo keeton
+```
+
+### Converting Indentation
+
+To convert files from 2-space to 4-space indentation, double all leading spaces:
+
+```python
+import re
+
+with open(filename, 'r') as f:
+    lines = f.readlines()
+
+converted_lines = []
+for i, line in enumerate(lines):
+    if i == 0:  # Skip summary line
+        converted_lines.append(line)
+        continue
+
+    match = re.match(r'^( +)(.+)$', line)
+    if match:
+        spaces = match.group(1)
+        rest = match.group(2)
+        new_spaces = ' ' * (len(spaces) * 2)
+        converted_lines.append(new_spaces + rest + '\n')
+    else:
+        converted_lines.append(line)
+
+with open(filename, 'w') as f:
+    f.writelines(converted_lines)
+```
+
+### Verifying Indentation
+
+Check for files using 2-space indentation:
+```bash
+# Look for lines with exactly 2 spaces followed by non-space
+grep -l "^  [^ ]" *.md | grep -v "README.md\|CLAUDE.md"
+```
+
 ## Maintenance Tasks
 
 ### Reorganizing All Files
@@ -114,6 +189,7 @@ To reorganize all files in this directory:
 2. Standardize all filenames to `snake_case`
 3. Verify all files (except README.md and CLAUDE.md) have keyword-rich summaries
 4. Ensure each summary is followed by a blank line
+5. Standardize indentation to 4-space increments for all files
 
 ### Adding New Files
 
@@ -123,6 +199,7 @@ When adding new note files:
 2. Use `snake_case` naming
 3. Add a keyword-rich summary as the first line
 4. Follow with a blank line before content
+5. Use 4-space indentation increments for hierarchical content
 
 ### Verifying Organization
 
@@ -141,6 +218,9 @@ for f in *.md; do
     head -1 "$f"
   fi
 done
+
+# Check for files using 2-space indentation (should return nothing)
+grep -l "^  [^ ]" *.md 2>/dev/null | grep -v "README.md\|CLAUDE.md"
 ```
 
 ## Search Examples

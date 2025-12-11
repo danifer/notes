@@ -5,10 +5,10 @@ I added a script in /usr/lib/update_sender_access for this task. If the incoming
 
 
 #Bypass spam checking (amavis) by sender or domain
-  Add domain or sender address to
-    /etc/amavis/whitelist
-      test@example.com
-      example.com
-  Restart amavis
-    /etc/init.d/amavis restart
-  Sender/domain will bypass spam check and receive WHITELISTED header tag
+    Add domain or sender address to
+        /etc/amavis/whitelist
+            test@example.com
+            example.com
+    Restart amavis
+        /etc/init.d/amavis restart
+    Sender/domain will bypass spam check and receive WHITELISTED header tag

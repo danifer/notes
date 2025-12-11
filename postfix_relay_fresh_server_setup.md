@@ -1,47 +1,47 @@
 Fresh Postfix relay server setup including fail2ban, SPF records, reverse DNS, IPv4 configuration, and header stripping.
 
 Check blacklists after server setup
-  https://mxtoolbox.com/blacklists.aspx
-  https://ipcheck.proofpoint.com/?ip=104.200.17.238
+    https://mxtoolbox.com/blacklists.aspx
+    https://ipcheck.proofpoint.com/?ip=104.200.17.238
 
 Update apt sources
-  apt-get update
+    apt-get update
 
 Install sudo
-  apt-get install sudo
+    apt-get install sudo
 
 Add a user account
-  adduser
+    adduser
 
 Add user to sudoers
-  visudo
+    visudo
 
 Disable root SSH login & move SSH login port to custom value
 
 Install fail2ban
 
 Install postfix via mailutils
-  Internet Site
+    Internet Site
 
 Add allowed relay IPs to mynetworks
-  /etc/postfix/main.cf
-  #You may need to contact server provider to unblock port 25
+    /etc/postfix/main.cf
+    #You may need to contact server provider to unblock port 25
 
 Update reverse DNS with provider, and in Postfix
-  /etc/postfix/main.cf
+    /etc/postfix/main.cf
 
 Need to make sure you've defined IPv4, not v6
-  /etc/postfix/main.cf
-    inet_protocols = ipv4
+    /etc/postfix/main.cf
+        inet_protocols = ipv4
 
 Update SPF records in the domain's DNS and add the relay server's IP address
-  TXT example.com "v=spf1 ip4:203.0.113.2 ~all"
+    TXT example.com "v=spf1 ip4:203.0.113.2 ~all"
 
 Optional: tell the relay server to strip offending header tags
-  https://major.io/2013/04/14/remove-sensitive-information-from-email-headers-with-postfix/
-    Edit /etc/postfix/header_checks with appropriate regex
-      /^Received:.*72.249.130/        IGNORE
-    Add to main.cf    
-      header_checks = regexp:/etc/postfix/header_checks
-    postmap /etc/postfix/header_checks
-    postfix reload
+    https://major.io/2013/04/14/remove-sensitive-information-from-email-headers-with-postfix/
+        Edit /etc/postfix/header_checks with appropriate regex
+            /^Received:.*72.249.130/        IGNORE
+        Add to main.cf    
+            header_checks = regexp:/etc/postfix/header_checks
+        postmap /etc/postfix/header_checks
+        postfix reload
