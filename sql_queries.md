@@ -1,4 +1,6 @@
 
+SQL and PostgreSQL query examples for regex operations, string comparison, and address matching with special character handling.
+
 # Compare address partials on two fields, accounting for inconsistencies with spacing and special characters.
     CREATE TEMP VIEW _results AS (
         SELECT

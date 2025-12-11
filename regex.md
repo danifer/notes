@@ -1,3 +1,5 @@
+Regular expression patterns for matching image src attributes and email addresses.
+
 Match img src attribute
     <img\s+(?:[^>]*?\s+)?src=(["'])(.*?)\1
 

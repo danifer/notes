@@ -1,3 +1,5 @@
+Redis commands for bulk delete keys, find keys with no TTL expiration, and pattern matching operations.
+
 Find keys with no expiration date:
     redis-cli -n 3 keys  "*" | while read LINE ; do TTL=`redis-cli ttl $LINE`; if [ $TTL -eq -1 ]; then echo "$LINE"; fi; done;
 

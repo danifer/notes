@@ -1,3 +1,5 @@
+APF (Advanced Policy Firewall) commands to allow, deny, and remove IP addresses from firewall rules.
+
 Per: https://sysadminspot.com/server-administration/allow-deny-and-remove-with-apf/
 
 Using the apf command via SSH has to be my preferred method of adjusting the firewall. To deny a source you can simply type:

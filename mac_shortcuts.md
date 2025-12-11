@@ -1,3 +1,5 @@
+macOS Terminal keyboard shortcuts and commands for file management, navigation, permissions, processes, network, Homebrew, and environment variables.
+
 Shortcuts
     Auto-complete file and folder names
         Tab

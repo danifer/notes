@@ -1,3 +1,5 @@
+Angular CLI installation, project setup, npm commands, and ng serve configuration for development.
+
 Install Node on Debian:
     apt-get install nodejs
         Appears to come bundled with npm

@@ -1,3 +1,5 @@
+CSV file manipulation using csvkit to convert xlsx to csv, cut columns, delete empty rows, and get statistics.
+
 Convert .xlsx to .csv
     in2csv origin.xlsx > destination.csv
 

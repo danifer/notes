@@ -1,3 +1,5 @@
+Block email senders in Postfix using sender_access file and postmap to rebuild the database.
+
 03/08/18
 I added a script in /usr/lib/update_sender_access for this task.
 

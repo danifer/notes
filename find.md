@@ -1,3 +1,5 @@
+Find command examples for searching files, delete by name or date, find and replace across files, and tar/gzip operations.
+
 Suppress error messages
     find . -name example 2>/dev/null
 

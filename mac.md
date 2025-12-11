@@ -1,3 +1,5 @@
+macOS specific commands for PHP version switching, alerts, rename files to lowercase, disk utilities, and partition management.
+
 Switch PHP versions
     brew link php@7.4
     brew link php@8.0

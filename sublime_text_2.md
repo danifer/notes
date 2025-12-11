@@ -1,3 +1,5 @@
+Sublime Text editor keyboard shortcuts for navigation, commenting, brace matching, and Python terminal access.
+
 Display list of functions/classes in current file (searchable)
     Ctrl + R
 

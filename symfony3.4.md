@@ -1,3 +1,5 @@
+Symfony 3.4 framework commands for project setup, Doctrine database, schema, routes, authentication, file permissions, and FOSUserBundle.
+
 Make a new project
   symfony new my_project_name 3.4
 

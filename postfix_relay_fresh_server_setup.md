@@ -1,3 +1,5 @@
+Fresh Postfix relay server setup including fail2ban, SPF records, reverse DNS, IPv4 configuration, and header stripping.
+
 Check blacklists after server setup
   https://mxtoolbox.com/blacklists.aspx
   https://ipcheck.proofpoint.com/?ip=104.200.17.238

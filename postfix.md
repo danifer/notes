@@ -1,3 +1,5 @@
+Postfix mail server configuration commands for viewing options, version info, and parsing incoming mail with PHP scripts.
+
 Display all postfix configuration options:
     postconf -d
 
