@@ -4,7 +4,7 @@ Fresh Postfix relay server setup including fail2ban, SPF records, reverse DNS, I
 
 Check blacklists after server setup
     https://mxtoolbox.com/blacklists.aspx
-    https://ipcheck.proofpoint.com/?ip=104.200.17.238
+    https://ipcheck.proofpoint.com/?ip=YOUR_SERVER_IP
 
 Update apt sources
     apt-get update
@@ -42,7 +42,7 @@ Update SPF records in the domain's DNS and add the relay server's IP address
 Optional: tell the relay server to strip offending header tags
     https://major.io/2013/04/14/remove-sensitive-information-from-email-headers-with-postfix/
         Edit /etc/postfix/header_checks with appropriate regex
-            /^Received:.*72.249.130/        IGNORE
+            /^Received:.*203\.0\.113/        IGNORE
         Add to main.cf    
             header_checks = regexp:/etc/postfix/header_checks
         postmap /etc/postfix/header_checks

@@ -39,4 +39,4 @@ Show mysql database info
 
 Tunnel local MySql server through SSH. This lets you connect your local dev environment to a production MySql server over SSH. Useful for real-time debugging of edge cases where you don't want to or can't dump the database from the production server.
     ssh -L [PORT]:[LOCAL ADDRESS]:[PORT] USER@REMOTE-SERVER-ADDRESS
-        ssh -p 1246 -L 3306:127.0.0.1:3306 keeton@dfw1.danifer.com
+        ssh -p portnumber -L 3306:127.0.0.1:3306 username@myserver.example.com

@@ -12,7 +12,7 @@ Linux system administration commands for users, groups, files, directories, devi
 
     Add user to group:
         usermod -a -G groupname username
-            usermod -a -G sudo keeton
+            usermod -a -G sudo username
 
     List a user's groups:
         groups
@@ -31,7 +31,7 @@ Linux system administration commands for users, groups, files, directories, devi
         dpkg-reconfigure tzdata
 
     Send an email from the command line:
-        echo "My message" | mail -s subject user@gmail.com
+        echo "My message" | mail -s subject user@example.com
 
     Use NMAP to scan an IP range
         Scan everything from 0-255
@@ -169,7 +169,7 @@ Linux system administration commands for users, groups, files, directories, devi
 
     Execute a remote command via ssh:
         ssh user@host [command1];[command2]
-            ssh keeton@server.com date;who;df -h
+            ssh username@server.com date;who;df -h
 
     Make the speaker beep; make a noise:
         echo -e '\a'

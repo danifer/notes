@@ -144,7 +144,7 @@ Clone a database (must be inactive/no active connections)
 
 Add user to group:
     usermod -a -G groupname username
-        usermod -a -G sudo keeton
+        usermod -a -G sudo username
 ```
 
 **Incorrect indentation (2-space or inconsistent):**
@@ -154,7 +154,7 @@ Create a database
 
 Add user to group:
   usermod -a -G groupname username
-    usermod -a -G sudo keeton
+    usermod -a -G sudo username
 ```
 
 ### Converting Indentation

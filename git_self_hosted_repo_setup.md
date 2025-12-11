@@ -4,7 +4,7 @@ Setup self-hosted Git repository server with SSH keys and bare repository initia
 
 Setup a new repository on a self-hosted Git server
 
-    create repository on repo host (dfw2)
+    create repository on repo host (git-server)
         mkdir /home/git/repositories/*.git
 
     initialize that repository (in the location you just created)
@@ -15,5 +15,5 @@ Setup a new repository on a self-hosted Git server
             ssh-keygen -t rsa
                 no password
 
-    add that ssh public key to the git users's authorized keys on the repo host (dfw2)
+    add that ssh public key to the git users's authorized keys on the repo host (git-server)
         nano /home/git/.ssh/authorized_keys

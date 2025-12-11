@@ -13,7 +13,7 @@ install sudo
 
 install ssh
     aptitude install ssh
-    change ssh port to 1246
+    change ssh port to portnumber
     disallow root users
 change apt sources
 update bios
@@ -43,10 +43,10 @@ If it's a Dell machine, add openmanage
 - Run 'source /root/.bashrc' to activate the change
 
 - Example usage:
-        root@ying:~> omreport chassis
-        root@ying:~> omreport storage  controller
-        root@ying:~> omreport storage  battery controller=0
-        root@ying:~> omreport system summary
+        root@server1:~> omreport chassis
+        root@server1:~> omreport storage  controller
+        root@server1:~> omreport storage  battery controller=0
+        root@server1:~> omreport system summary
 -http://support.dell.com/support/edocs/software/svradmin/5.1/en/omss_ug/html/cli.html
 
 edit /etc/hosts to respect local network

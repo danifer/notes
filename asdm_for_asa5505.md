@@ -4,10 +4,10 @@ Cisco ASDM setup for ASA5505 firewall including SSH tunnel, Java configuration, 
 
 Making the ASDM connect to ASA5505. This is a pain in the ass.
 
-    -The ASA5505 is configured to allow internal connections only. This is by design for security. You'll need to create an ssh tunnel to an internal machine (like dfw2), and then you can connect to the ASA5505 from the internal LAN.
+    -The ASA5505 is configured to allow internal connections only. This is by design for security. You'll need to create an ssh tunnel to an internal machine (like internal-server), and then you can connect to the ASA5505 from the internal LAN.
 
         Creating the SSH tunnel: https://www.getfilecloud.com/blog/create-your-own-virtual-private-network-for-ssh-with-putty/
-            I saved mine as "dfw2 tunnel" in my putty "Saved Sessions" list (3/1/18)
+            I saved mine as "internal-server tunnel" in my putty "Saved Sessions" list (3/1/18)
 
         Setting up IE for a SOCKS proxy: http://support.moonpoint.com/network/proxy/ie10-socks-proxy.php
 
@@ -27,7 +27,7 @@ Some gotchas:
 
     -The ASDM client will use the proxy settings configured for Internet Explorer.  Click the Java icon on the ASDM launcher page to view the Java console and look for connection errors.
 
-    -If you're looking for files, check your desktop "Danifer" entitled "asdm asa5505 resources". I saved a copy of Java 1.6 Runtime Environment, the ASDM launcher setup program, and some screenshots for the proxy/tunnel setup.
+    -If you're looking for files, check your desktop folder entitled "asdm asa5505 resources". I saved a copy of Java 1.6 Runtime Environment, the ASDM launcher setup program, and some screenshots for the proxy/tunnel setup.
 
 Configuring multiple external IP ranges
         https://community.spiceworks.com/topic/1602602-how-to-add-a-second-subnet-to-cisco-asa-firewall-using-asdm

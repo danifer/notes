@@ -4,7 +4,7 @@ Subversion (SVN) version control commands for switch repository, export, find ig
 
 - Change location of the repository using the "switch" command, not "relocate" which is unavailable in earlier versions of Subversion
     svn switch --relocate FROM TO
-        svn switch --relocate https://secure.danifer.com/svn/rightinvoice.com/trunk svn+altssh://dfw2.danifer.com/home/svn/rightinvoice.com/trunk
+        svn switch --relocate https://oldserver.example.com/svn/myproject/trunk svn+altssh://newserver.example.com/home/svn/myproject/trunk
 
 - Export a repository to remove it from version control
     svn export [source] [destination]
