@@ -1,5 +1,7 @@
 Cisco ASDM setup for ASA5505 firewall including SSH tunnel, Java configuration, and SOCKS proxy settings.
 
+---
+
 Making the ASDM connect to ASA5505. This is a pain in the ass.
 
     -The ASA5505 is configured to allow internal connections only. This is by design for security. You'll need to create an ssh tunnel to an internal machine (like dfw2), and then you can connect to the ASA5505 from the internal LAN.

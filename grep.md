@@ -1,5 +1,7 @@
 Grep search patterns and options for recursive search, regex, exclude directories, OR operators, email extraction, and file filtering.
 
+---
+
 Highlight your matches
     grep --color
 

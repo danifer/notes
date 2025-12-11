@@ -1,5 +1,7 @@
 Git version control commands for commit, branch, merge, reset, stash, push, pull, diff, and remote repository management.
 
+---
+
 Undo git add before commit:
     git reset FILE
 

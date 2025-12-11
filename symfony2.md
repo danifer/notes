@@ -1,5 +1,7 @@
 Symfony 2 framework setup with Composer, Doctrine ORM, console commands, cache, fixtures, migrations, and FOSUserBundle.
 
+---
+
 - Installed composer locally (http://getcomposer.org/download/)
 - Used composer to create a new symfony project: php composer.phar create-project symfony/framework-standard-edition path/ 2.4.0 (sets up directory structure)
 - Create a bundle for your "thing"

@@ -1,5 +1,7 @@
 Homebrew commands for PostgreSQL, Redis, and PHP version management including restart services and configuration file locations.
 
+---
+
 To restart postgresql after an upgrade:
         brew services restart postgresql
 

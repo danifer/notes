@@ -1,5 +1,7 @@
 Sample gitignore template file for Symfony projects including vendor, cache, env files, and IDE configurations.
 
+---
+
 ###> git ###
 !/**/.gitkeep
 ###< git ###

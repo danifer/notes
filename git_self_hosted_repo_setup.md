@@ -1,5 +1,7 @@
 Setup self-hosted Git repository server with SSH keys and bare repository initialization.
 
+---
+
 Setup a new repository on a self-hosted Git server
 
     create repository on repo host (dfw2)

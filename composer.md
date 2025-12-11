@@ -1,5 +1,7 @@
 PHP Composer commands for package management including show, search, require, and dependency information.
 
+---
+
 Show installed packages
     php composer.phar show
 

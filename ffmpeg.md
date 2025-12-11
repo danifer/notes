@@ -1,5 +1,7 @@
 FFmpeg commands for video and audio processing including reduce size, extract audio, remove silence, and concatenate files.
 
+---
+
 Reduce video size:
     ffmpeg -i input_file.mp4 -vcodec libx264 -crf 24 output_file.mp4
 

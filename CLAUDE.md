@@ -34,30 +34,45 @@ Every note file must have a **keyword-rich summary** as the first line.
 
 ### Summary Requirements
 
-1. **Format**: Single sentence at the top of the file, followed by a blank line
-2. **Content**: Include relevant keywords that would be used in grep searches
-3. **Purpose**: Enable quick identification of file contents via grep/search
+1. **Format**: Single sentence at the top of the file
+2. **Separator**: Followed by a blank line, then `---`, then another blank line
+3. **Content**: Include relevant keywords that would be used in grep searches
+4. **Purpose**: Enable quick identification of file contents via grep/search
 
 ### Summary Examples
 
-**Good summaries** (keyword-rich):
+**Good summary format** (keyword-rich with separator):
 ```markdown
 PostgreSQL database commands for createdb, psql, pg_dump, pg_restore, export to CSV/JSON, remote access, and database size queries.
 
-[Rest of file content...]
+---
+
+Install Postgres from Homebrew:
+    brew update; brew install postgresql
+...
 ```
 
+**Complete example**:
 ```markdown
-FFmpeg commands for video and audio processing including reduce size, extract audio, remove silence, and concatenate files.
+Git version control commands for commit, branch, merge, reset, stash, push, pull, diff, and remote repository management.
 
-[Rest of file content...]
+---
+
+Undo git add before commit:
+    git reset FILE
+
+Update the message for a commit
+    git commit --amend -m "an updated commit message"
+...
 ```
 
-**Bad summaries** (not keyword-rich):
+**Bad summary** (not keyword-rich):
 ```markdown
 This file contains PostgreSQL information.
 
-[Rest of file content...]
+---
+
+[Content...]
 ```
 
 ### Common Grep Search Terms
@@ -263,9 +278,11 @@ To reorganize all files in this directory:
 1. Convert any `.txt` files to `.md`
 2. Standardize all filenames to `snake_case`
 3. Verify all files (except README.md and CLAUDE.md) have keyword-rich summaries
-4. Ensure each summary is followed by a blank line
+4. Add separator: blank line, `---`, blank line after each summary
 5. Standardize indentation to 4-space increments for all files
 6. Remove spaces from blank lines (blank lines should be truly empty)
+
+Note: Existing markdown formatting (code blocks, etc.) can remain, but new content should use indentation-based organization.
 
 ### Adding New Files
 
@@ -274,9 +291,11 @@ When adding new note files:
 1. Use `.md` extension
 2. Use `snake_case` naming
 3. Add a keyword-rich summary as the first line
-4. Follow with a blank line before content
+4. Add separator: blank line, `---`, blank line
 5. Use 4-space indentation increments for hierarchical content
 6. Ensure blank lines contain no spaces (truly empty lines only)
+
+Note: Use indentation-based organization. Existing markdown formatting can remain where present.
 
 ### Verifying Organization
 

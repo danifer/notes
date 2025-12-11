@@ -1,5 +1,7 @@
 MySQL database administration including users, passwords, replication, mysqldump, gzip backup, SSH tunnel, and database size queries.
 
+---
+
 Replication - used the following articles:
     https://www.linode.com/docs/databases/mysql/configure-master-master-mysql-database-replication/
     https://www.digitalocean.com/community/tutorials/how-to-set-up-mysql-master-master-replication

@@ -1,5 +1,7 @@
 Bash scripting examples for string conditionals, substring matching, empty variable checks, and grep with exit codes.
 
+---
+
 # Does a string contain a string?
     if [[ "$string1" == *"$string2"* ]]; then
         echo "The string contains the substring."

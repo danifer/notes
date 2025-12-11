@@ -1,5 +1,7 @@
 Debian server setup checklist including SSH, RAID monitoring, Dell OpenManage, firewall, Apache, nginx, MySQL, and backup configuration.
 
+---
+
 Things to check when setting up a new server:
 
 check startup settings

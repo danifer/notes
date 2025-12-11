@@ -1,5 +1,7 @@
 Rsync file synchronization commands for mirroring directories, SSH sync, compare checksums, and backup operations with delete options.
 
+---
+
 Make a copy of a directory, deleting files in the destination that don't exist in the origin. Useful for mirroring a directory.  The -p flag keeps the permissions intact.
     rsync -avp --delete source/ destination/
         -a: archive

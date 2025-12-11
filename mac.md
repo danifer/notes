@@ -1,4 +1,9 @@
-macOS specific commands for PHP version switching, alerts, rename files to lowercase, disk utilities, and partition management.
+macOS specific commands for PHP version switching, alerts, rename files to lowercase, disk utilities, partition management, and file hashing.
+
+---
+
+Generate SHA-256 hash of a file
+    shasum -a 256 filename
 
 Switch PHP versions
     brew link php@7.4

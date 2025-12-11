@@ -1,5 +1,7 @@
 PostgreSQL database commands for createdb, psql, pg_dump, pg_restore, export to CSV/JSON, remote access, and database size queries.
 
+---
+
 Install Postgres from Homebrew:
     brew update; brew install postgresql
 

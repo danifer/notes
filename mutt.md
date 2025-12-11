@@ -1,5 +1,7 @@
 Mutt email client commands for IMAP connection, sending email from command line, and deleting messages by date range.
 
+---
+
 Connect to a remote server
     mutt -f imaps://mail.yourdomain.com/
 

@@ -1,5 +1,7 @@
 Reference URLs for SSL certificates, SSH keys, Postfix spam configuration, Sublime Text, and Git remote repository setup.
 
+---
+
 Installing Comodo Positive SSL:
     http://billpatrianakos.me/blog/2014/04/04/installing-comodo-positive-ssl-certs-on-apache-and-openssl/
 

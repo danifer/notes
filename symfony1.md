@@ -1,5 +1,7 @@
 Symfony 1.4 framework setup commands for project generation, Doctrine ORM, modules, authentication, and templates.
 
+---
+
 Setup a new project:
 php /home/www/lib/symfony-1.4.4/data/bin/symfony generate:project ecart
 php symfony generate:app frontend
