@@ -179,6 +179,81 @@ Check for files using 2-space indentation:
 grep -l "^  [^ ]" *.md | grep -v "README.md\|CLAUDE.md"
 ```
 
+## Blank Line Standards
+
+Blank lines must be truly empty with no spaces or tabs.
+
+### Rules
+
+1. **Empty Lines**: Blank lines should contain only a newline character (`\n`)
+2. **No Whitespace**: Blank lines must NOT contain any spaces, tabs, or other whitespace
+3. **Purpose**: Ensures clean file formatting and proper diff/version control
+
+### Example
+
+**Correct (truly empty lines):**
+```markdown
+Create a database
+    createdb -e -E 'UTF-8'
+
+Drop a database
+    dropdb {database}
+```
+
+**Incorrect (spaces on blank line):**
+```markdown
+Create a database
+    createdb -e -E 'UTF-8'
+
+Drop a database
+    dropdb {database}
+```
+*Note: The line between the two sections contains invisible spaces*
+
+### Cleaning Blank Lines
+
+To remove spaces from blank lines in all files:
+
+```python
+import os
+
+def clean_blank_lines(filename):
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+
+    cleaned_lines = []
+    for line in lines:
+        # If line contains only whitespace, replace with just newline
+        if line != '\n' and line.strip() == '':
+            cleaned_lines.append('\n')
+        else:
+            cleaned_lines.append(line)
+
+    with open(filename, 'w') as f:
+        f.writelines(cleaned_lines)
+
+# Clean all markdown files
+for filename in os.listdir('.'):
+    if filename.endswith('.md'):
+        clean_blank_lines(filename)
+```
+
+### Verifying Blank Lines
+
+Check for files with whitespace in blank lines:
+```python
+# Files with whitespace-only blank lines
+for filename in os.listdir('.'):
+    if not filename.endswith('.md'):
+        continue
+
+    with open(filename, 'r') as f:
+        for line in f:
+            if line != '\n' and line.strip() == '':
+                print(f"{filename} has whitespace in blank lines")
+                break
+```
+
 ## Maintenance Tasks
 
 ### Reorganizing All Files
@@ -190,6 +265,7 @@ To reorganize all files in this directory:
 3. Verify all files (except README.md and CLAUDE.md) have keyword-rich summaries
 4. Ensure each summary is followed by a blank line
 5. Standardize indentation to 4-space increments for all files
+6. Remove spaces from blank lines (blank lines should be truly empty)
 
 ### Adding New Files
 
@@ -200,6 +276,7 @@ When adding new note files:
 3. Add a keyword-rich summary as the first line
 4. Follow with a blank line before content
 5. Use 4-space indentation increments for hierarchical content
+6. Ensure blank lines contain no spaces (truly empty lines only)
 
 ### Verifying Organization
 
@@ -221,6 +298,18 @@ done
 
 # Check for files using 2-space indentation (should return nothing)
 grep -l "^  [^ ]" *.md 2>/dev/null | grep -v "README.md\|CLAUDE.md"
+
+# Check for blank lines containing spaces (should return nothing)
+python3 << 'PYEOF'
+import os
+for f in os.listdir('.'):
+    if f.endswith('.md') and f not in ['README.md', 'CLAUDE.md']:
+        with open(f) as file:
+            for i, line in enumerate(file, 1):
+                if line != '\n' and line.strip() == '':
+                    print(f"{f}:{i} has whitespace in blank line")
+                    break
+PYEOF
 ```
 
 ## Search Examples

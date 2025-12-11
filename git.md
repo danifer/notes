@@ -103,7 +103,7 @@ Reset your branch to match the remote repository. Like if you accidentally merge
 
 Review merge results without committing or fast-forwarding. Basically a dry-run option
     git merge --no-commit --no-ff $BRANCH
-    
+
 Initialize a new repository
    git init (from the current repository)
    git init --bare (to initialize a blank storage repository)

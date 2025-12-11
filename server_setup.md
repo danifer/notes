@@ -46,11 +46,11 @@ If it's a Dell machine, add openmanage
         root@ying:~> omreport storage  battery controller=0
         root@ying:~> omreport system summary
 -http://support.dell.com/support/edocs/software/svradmin/5.1/en/omss_ug/html/cli.html
-       
+
 edit /etc/hosts to respect local network
     127.0.0.1       localhost.localdomain   localhost
     192.168.0.100   server1.example.com     server1
-   
+
     # The following lines are desirable for IPv6 capable hosts
     ::1     localhost ip6-localhost ip6-loopback
     fe00::0 ip6-localnet
